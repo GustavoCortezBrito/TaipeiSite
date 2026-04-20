@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-taipei-red: #A84544;
+    --color-taipei-cream: #F8F1EB;
+    --color-taipei-sage: #9AAB9E;
+    --color-taipei-brown: #8F7368;
+    --color-taipei-beige: #CDB5A7;
+  }
+  
+  body {
+    @apply bg-secondary text-gray-900 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
