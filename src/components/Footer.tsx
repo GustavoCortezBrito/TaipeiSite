@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Instagram, Facebook, Heart } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,6 +46,16 @@ export default function Footer() {
                 whileTap={{ scale: 0.9 }}
               >
                 <Facebook size={20} />
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/company/taipeicoffeehouse"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Linkedin size={20} />
               </motion.a>
             </div>
           </motion.div>
@@ -131,13 +141,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="flex items-center justify-center gap-2 flex-wrap">
-            <span>&copy; {currentYear} Taipei Coffee House.</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-1">
-              Feito com <Heart size={14} className="text-taipei-red fill-taipei-red animate-pulse" /> em Florianópolis
-            </span>
-          </p>
+          <p>&copy; {currentYear} Taipei Coffee House. Todos os direitos reservados.</p>
         </motion.div>
       </div>
     </footer>

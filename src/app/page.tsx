@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedSection from "@/components/AnimatedSection";
+import FAQ from "@/components/FAQ";
 import { motion } from "framer-motion";
 import { Coffee, UtensilsCrossed, Calendar, Sparkles, ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
@@ -219,6 +220,9 @@ export default function Home() {
             </motion.div>
           </div>
         </AnimatedSection>
+
+        {/* FAQ Section */}
+        <FAQ />
       </main>
       <Footer />
     </>
