@@ -216,7 +216,7 @@ export default function EventosSociais() {
                   transition={{ delay: index * 0.2 }}
                   className="bg-taipei-cream p-8 rounded-2xl"
                 >
-                  <p className="text-lg text-taipei-brown italic mb-4">"{testimonial.text}"</p>
+                  <p className="text-lg text-taipei-brown italic mb-4">&ldquo;{testimonial.text}&rdquo;</p>
                   <p className="text-taipei-red font-semibold">— {testimonial.author}</p>
                 </motion.div>
               ))}

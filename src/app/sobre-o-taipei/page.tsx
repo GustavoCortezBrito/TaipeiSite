@@ -81,7 +81,7 @@ export default function SobreOTaipei() {
                 <p className="text-lg text-taipei-brown leading-relaxed">
                   Seu pai, dono de restaurante em Taiwan e apaixonado pela cozinha, também foi uma influência importante. 
                   A vontade de empreender sempre existiu, e em uma conversa despretensiosa, uma amiga arquiteta fez a 
-                  pergunta que despertou a ideia: "Day, por que você não abre um café?"
+                  pergunta que despertou a ideia: &ldquo;Day, por que você não abre um café?&rdquo;
                 </p>
               </motion.div>
 
