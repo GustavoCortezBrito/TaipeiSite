@@ -11,45 +11,105 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Qual o horário de funcionamento?",
-    answer: "Funcionamos de terça a sexta das 11h às 20h, sábados das 10h às 20h e domingos das 10h às 19h. Fechamos às segundas-feiras."
+    question: "O Taipei Coffee House tem espaço kids?",
+    answer: "Sim, temos um espaço kids para que as crianças possam brincar enquanto você aproveita seu momento no Taipei."
   },
   {
-    question: "É necessário fazer reserva?",
-    answer: "Recomendamos reserva para grupos acima de 6 pessoas e para finais de semana. Para reservas, entre em contato pelo WhatsApp (48) 98879-8141."
-  },
-  {
-    question: "Vocês aceitam cartão?",
-    answer: "Sim, aceitamos todas as bandeiras de cartão de crédito e débito, além de PIX."
-  },
-  {
-    question: "Tem estacionamento?",
-    answer: "Sim, temos estacionamento gratuito para nossos clientes."
-  },
-  {
-    question: "Vocês fazem eventos?",
-    answer: "Sim! Realizamos eventos corporativos, aniversários, formaturas e celebrações especiais. Entre em contato para mais informações sobre nossos pacotes."
-  },
-  {
-    question: "O brunch é servido todos os dias?",
-    answer: "Nosso brunch especial é servido aos finais de semana. Durante a semana, temos opções de café da manhã e almoço."
-  },
-  {
-    question: "Tem opções vegetarianas e veganas?",
-    answer: "Sim, nosso cardápio inclui diversas opções vegetarianas e veganas. Consulte nosso menu ou pergunte ao garçom."
-  },
-  {
-    question: "Aceitam pets?",
+    question: "O Taipei Coffee House é pet friendly?",
     answer: "Sim, pets são bem-vindos em nossa área externa."
+  },
+  {
+    question: "Onde fica o Taipei Coffee House?",
+    answer: "Estamos localizados na Estrada Haroldo Soares Glavan, 3010 - Cacupé, Florianópolis - SC."
+  },
+  {
+    question: "O Taipei Coffee House serve brunch?",
+    answer: "Sim, servimos brunch especial aos finais de semana com opções autorais e influência asiática."
+  },
+  {
+    question: "O Taipei Coffee House é um café ou restaurante?",
+    answer: "Somos ambos! Oferecemos cafés especiais, brunch e almoço em um ambiente sofisticado."
+  },
+  {
+    question: "Precisa fazer reserva para visitar o Taipei Coffee House?",
+    answer: "Recomendamos reserva para grupos acima de 6 pessoas e para finais de semana. Entre em contato pelo WhatsApp (48) 98879-8141."
+  },
+  {
+    question: "O Taipei Coffee House é um bom lugar para famílias?",
+    answer: "Sim, somos um ambiente familiar com espaço kids e opções no cardápio para todas as idades."
+  },
+  {
+    question: "O Taipei Coffee House tem área externa?",
+    answer: "Sim, temos uma área externa com vista para o mar, perfeita para aproveitar o clima de Florianópolis."
+  },
+  {
+    question: "O Taipei Coffee House tem opções de almoço ou refeições?",
+    answer: "Sim, servimos almoço com pratos autorais que combinam gastronomia contemporânea e influência asiática."
+  },
+  {
+    question: "O Taipei Coffee House aceita eventos ou celebrações?",
+    answer: "Sim! Realizamos eventos corporativos, aniversários, formaturas e celebrações especiais. Entre em contato para mais informações."
+  },
+  {
+    question: "Qual o melhor café em Florianópolis?",
+    answer: "O Taipei Coffee House é referência em cafés especiais em Florianópolis, com preparos cuidadosos e grãos selecionados."
+  },
+  {
+    question: "Por que visitar o Taipei Coffee House em Florianópolis?",
+    answer: "Oferecemos uma experiência gastronômica única com vista para o mar, combinando gastronomia autoral, cafés especiais e um ambiente acolhedor."
+  },
+  {
+    question: "O Taipei Coffee House é uma boa opção para turistas em Florianópolis?",
+    answer: "Sim, somos um destino imperdível para turistas que buscam experiências gastronômicas diferenciadas com vista para o mar."
+  },
+  {
+    question: "O Taipei Coffee House tem vista para o mar?",
+    answer: "Sim, temos uma vista privilegiada para o mar em Cacupé, um dos bairros mais charmosos de Florianópolis."
+  },
+  {
+    question: "O Taipei Coffee House tem estacionamento?",
+    answer: "Sim, oferecemos estacionamento gratuito para nossos clientes."
+  },
+  {
+    question: "O Taipei Coffee House é um bom lugar para encontros ou reuniões?",
+    answer: "Sim, nosso ambiente é ideal para encontros pessoais e reuniões de negócios, com espaço confortável e vista inspiradora."
+  },
+  {
+    question: "O Taipei Coffee House é uma cafeteria instagramável em Florianópolis?",
+    answer: "Sim, nosso ambiente com influência asiática e vista para o mar cria cenários perfeitos para fotos."
+  },
+  {
+    question: "O Taipei Coffee House oferece experiências gastronômicas diferentes?",
+    answer: "Sim, nossa gastronomia autoral combina técnicas contemporâneas com influência asiática, criando pratos únicos."
+  },
+  {
+    question: "O Taipei Coffee House é um bom lugar para trabalhar ou estudar?",
+    answer: "Sim, oferecemos um ambiente tranquilo e inspirador, ideal para trabalho remoto ou estudos."
+  },
+  {
+    question: "O Taipei Coffee House fica perto de Jurerê ou do norte da ilha?",
+    answer: "Sim, estamos localizados em Cacupé, próximo ao norte da ilha e de fácil acesso para quem está em Jurerê."
+  },
+  {
+    question: "O Taipei Coffee House é um lugar tranquilo para passar a tarde?",
+    answer: "Sim, nosso ambiente acolhedor e vista para o mar proporcionam o cenário perfeito para uma tarde relaxante."
+  },
+  {
+    question: "O que torna o Taipei Coffee House diferente de outras cafeterias em Florianópolis?",
+    answer: "Nossa combinação única de gastronomia autoral com influência asiática, cafés especiais, vista para o mar e ambiente sofisticado nos torna uma experiência única em Florianópolis."
   }
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleQuestion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const displayedFAQs = showAll ? faqData : faqData.slice(0, 7);
+  const hasMore = faqData.length > 7;
 
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-white to-taipei-cream">
@@ -71,13 +131,13 @@ export default function FAQ() {
         </motion.div>
 
         <div className="space-y-4">
-          {faqData.map((item, index) => (
+          {displayedFAQs.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="bg-white rounded-xl shadow-md overflow-hidden border border-taipei-beige/30"
             >
               <button
@@ -114,6 +174,23 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
+
+        {hasMore && !showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-8 text-center"
+          >
+            <button
+              onClick={() => setShowAll(true)}
+              className="bg-taipei-red text-white px-8 py-3 rounded-full hover:bg-taipei-brown transition-all hover:shadow-lg"
+            >
+              Carregar Mais Perguntas
+            </button>
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

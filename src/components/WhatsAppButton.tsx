@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
     <FloatingWhatsApp
       phoneNumber="5548988798141"
       accountName="Taipei Coffee House"
-      avatar="/logo-taipei.png"
+      avatar="/taipei.avif"
       statusMessage="Responde em até 2 horas"
       chatMessage="Olá! 👋 Bem-vindo ao Taipei Coffee House. Como podemos te ajudar?"
       placeholder="Digite sua mensagem..."
