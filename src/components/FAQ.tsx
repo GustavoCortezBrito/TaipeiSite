@@ -108,8 +108,8 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const displayedFAQs = showAll ? faqData : faqData.slice(0, 7);
-  const hasMore = faqData.length > 7;
+  const displayedFAQs = showAll ? faqData : faqData.slice(0, 5);
+  const hasMore = faqData.length > 5;
 
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-white to-taipei-cream">
