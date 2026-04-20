@@ -6,7 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import FAQ from "@/components/FAQ";
 import { motion } from "framer-motion";
-import { Coffee, UtensilsCrossed, Calendar, Sparkles, ArrowRight, Star } from "lucide-react";
+import { Coffee, UtensilsCrossed, Calendar, Sparkles, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -203,20 +203,118 @@ export default function Home() {
               backgroundSize: "50px 50px"
             }}
           />
-          <div className="container mx-auto max-w-4xl text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">Visite-nos em Cacupé</h2>
-            <p className="text-xl mb-10 opacity-90">
-              Descubra uma experiência gastronômica única com vista para o mar
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="/sobre-o-taipei"
-                className="group bg-white text-taipei-red px-10 py-4 rounded-full hover:bg-taipei-cream transition-all hover:shadow-2xl inline-flex items-center gap-2 font-semibold relative overflow-hidden"
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <div className="text-center mb-12">
+              <motion.h2 
+                className="text-4xl md:text-5xl font-serif mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-taipei-red/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                Conheça Nossa História
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+                Visite-nos em Cacupé
+              </motion.h2>
+              <motion.p 
+                className="text-xl mb-4 opacity-90"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Descubra uma experiência gastronômica única com vista para o mar
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  icon: MapPin,
+                  title: "Localização",
+                  info: "Estrada Haroldo Soares Glavan, 3010",
+                  subinfo: "Cacupé, Florianópolis - SC",
+                  link: "https://maps.google.com/?q=Taipei+Coffee+House+Cacupe",
+                  delay: 0
+                },
+                {
+                  icon: Phone,
+                  title: "Telefone",
+                  info: "(48) 98879-8141",
+                  subinfo: "WhatsApp disponível",
+                  link: "https://wa.me/5548988798141",
+                  delay: 0.1
+                },
+                {
+                  icon: Calendar,
+                  title: "Horário",
+                  info: "Ter-Sex: 11h-20h",
+                  subinfo: "Sáb: 10h-20h | Dom: 10h-19h",
+                  link: null,
+                  delay: 0.2
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: item.delay }}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all"
+                >
+                  {item.link ? (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="bg-white/20 p-4 rounded-full mb-4">
+                          <item.icon size={32} />
+                        </div>
+                        <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+                        <p className="text-lg font-medium mb-1">{item.info}</p>
+                        <p className="text-sm opacity-80">{item.subinfo}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="flex flex-col items-center text-center">
+                      <div className="bg-white/20 p-4 rounded-full mb-4">
+                        <item.icon size={32} />
+                      </div>
+                      <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+                      <p className="text-lg font-medium mb-1">{item.info}</p>
+                      <p className="text-sm opacity-80">{item.subinfo}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <a
+                  href="https://wa.me/5548988798141"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white text-taipei-red px-10 py-4 rounded-full hover:bg-taipei-cream transition-all hover:shadow-2xl inline-flex items-center gap-2 font-semibold relative overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-taipei-red/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  <Phone size={20} />
+                  Fazer Reserva
+                </a>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link 
+                  href="/sobre-o-taipei"
+                  className="group border-2 border-white text-white px-10 py-4 rounded-full hover:bg-white hover:text-taipei-red transition-all hover:shadow-2xl inline-flex items-center gap-2 font-semibold relative overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 -z-10" />
+                  Conheça Nossa História
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </AnimatedSection>
