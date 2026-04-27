@@ -109,22 +109,62 @@ export default function Home() {
         {/* Sobre Section */}
         <AnimatedSection id="sobre" className="py-24 px-4 bg-white relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-taipei-red to-transparent" />
-          <div className="container mx-auto max-w-4xl text-center">
+          <div className="container mx-auto max-w-5xl">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-serif text-taipei-red mb-8">Sobre Nós</h2>
+              <h2 className="text-4xl md:text-5xl font-serif text-taipei-red mb-8">Sobre o Taipei Coffee House</h2>
               <div className="w-24 h-1 bg-taipei-red mx-auto mb-8" />
             </motion.div>
-            <p className="text-lg md:text-xl text-taipei-brown leading-relaxed">
-              Localizado em Cacupé, o Taipei Coffee House é um restaurante em Florianópolis com vista para o mar 
-              que une gastronomia autoral, brunch, almoço e cafés especiais em um ambiente sofisticado. 
-              Ideal para encontros, eventos e celebrações, somos referência para quem busca restaurante com vista 
-              em Florianópolis e experiências diferenciadas à beira-mar.
-            </p>
+            
+            <div className="space-y-6 text-lg md:text-xl text-taipei-brown leading-relaxed">
+              <p className="text-center">
+                Localizado em Cacupé, um dos bairros mais charmosos de Florianópolis, o Taipei Coffee House é muito mais 
+                que um simples café ou restaurante. Somos um espaço de experiências, onde cada visita se transforma em 
+                um momento especial de conexão, sabor e contemplação.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-taipei-cream p-8 rounded-2xl"
+                >
+                  <h3 className="text-2xl font-serif text-taipei-red mb-4">Nossa Essência</h3>
+                  <p className="leading-relaxed">
+                    Combinamos gastronomia autoral com influência asiática, cafés especiais selecionados e um ambiente 
+                    sofisticado com vista privilegiada para o mar. Cada detalhe foi pensado para proporcionar uma 
+                    experiência sensorial única, onde tradição e contemporaneidade se encontram.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-taipei-cream p-8 rounded-2xl"
+                >
+                  <h3 className="text-2xl font-serif text-taipei-red mb-4">Localização Privilegiada</h3>
+                  <p className="leading-relaxed">
+                    Em Cacupé, oferecemos não apenas uma refeição, mas uma experiência completa. Nossa vista para o mar 
+                    de Florianópolis cria o cenário perfeito para brunches relaxantes, almoços especiais, encontros de 
+                    negócios ou celebrações memoráveis com família e amigos.
+                  </p>
+                </motion.div>
+              </div>
+
+              <p className="text-center mt-8">
+                Seja para um café da manhã tranquilo, um brunch de fim de semana, um almoço executivo ou um evento especial, 
+                o Taipei Coffee House é o destino ideal para quem busca qualidade, acolhimento e uma experiência gastronômica 
+                diferenciada em Florianópolis. Venha descobrir por que somos referência em cafés especiais e gastronomia 
+                autoral na região.
+              </p>
+            </div>
           </div>
         </AnimatedSection>
 

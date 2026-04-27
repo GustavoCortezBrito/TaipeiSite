@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
+import SocialShare from "./SocialShare";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -135,12 +136,15 @@ export default function Footer() {
         </div>
 
         <motion.div 
-          className="border-t border-taipei-beige/30 mt-8 pt-8 text-center text-sm text-taipei-beige"
+          className="border-t border-taipei-beige/30 mt-8 pt-8 text-center text-sm text-taipei-beige space-y-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
+          <div className="flex justify-center">
+            <SocialShare />
+          </div>
           <p>&copy; {currentYear} Taipei Coffee House. Todos os direitos reservados.</p>
         </motion.div>
       </div>

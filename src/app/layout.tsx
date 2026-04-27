@@ -37,6 +37,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="canonical" href="https://www.taipeicoffeehouse.com.br" />
+        <meta name="theme-color" content="#A84544" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="geo.region" content="BR-SC" />
+        <meta name="geo.placename" content="Florianópolis" />
+        <meta name="geo.position" content="-27.4817;-48.5208" />
+        <meta name="ICBM" content="-27.4817, -48.5208" />
+      </head>
       <body className="antialiased">
         {children}
       </body>
