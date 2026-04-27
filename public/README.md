@@ -1,5 +1,12 @@
 # Assets do Taipei Coffee House
 
+## Favicon
+Adicione o favicon do Taipei Coffee House:
+- `favicon.ico` - Ícone principal (16x16, 32x32, 48x48)
+- `apple-touch-icon.png` - Ícone para dispositivos Apple (180x180)
+
+Você pode gerar favicons a partir do logo usando: https://realfavicongenerator.net/
+
 ## Logo
 Adicione o logo do Taipei Coffee House como `logo-taipei.png` nesta pasta para o botão do WhatsApp.
 
