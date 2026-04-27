@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import { motion } from "framer-motion";
 import { Coffee, UtensilsCrossed, Calendar, Sparkles, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -16,10 +17,23 @@ export default function Home() {
       <WhatsAppButton />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-[90vh] bg-gradient-to-br from-taipei-cream via-secondary to-taipei-beige flex items-center justify-center overflow-hidden">
+        <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/hero/hero-main.jpg"
+              alt="Taipei Coffee House - Vista para o mar em Cacupé"
+              fill
+              className="object-cover"
+              priority
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-taipei-cream/80 via-secondary/70 to-taipei-beige/80" />
+          </div>
+
           {/* Animated Background Elements */}
           <motion.div
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0 opacity-10 z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.1 }}
             transition={{ duration: 2 }}
@@ -28,7 +42,7 @@ export default function Home() {
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-taipei-sage rounded-full blur-3xl" />
           </motion.div>
 
-          <div className="relative text-center px-4 z-10">
+          <div className="relative text-center px-4 z-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
