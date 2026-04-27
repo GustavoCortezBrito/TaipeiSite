@@ -30,7 +30,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="group">
-            <motion.h1 
+            <motion.div 
               className="text-2xl font-serif text-taipei-red font-bold hover:opacity-80 transition-opacity"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -42,7 +42,7 @@ export default function Header() {
                 whileHover={{ width: "100%" }}
                 transition={{ duration: 0.3 }}
               />
-            </motion.h1>
+            </motion.div>
           </Link>
           
           {/* Desktop Menu */}

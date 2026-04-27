@@ -40,7 +40,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Taipei Coffee House
+                Taipei Coffee House Florianópolis
               </motion.h1>
             </motion.div>
 
@@ -86,7 +86,7 @@ export default function Home() {
                 >
                   <span className="absolute inset-0 bg-taipei-red translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 -z-10" />
                   <Calendar size={20} />
-                  Eventos
+                  Nossos Eventos
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>

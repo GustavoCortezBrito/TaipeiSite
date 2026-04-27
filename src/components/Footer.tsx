@@ -74,7 +74,7 @@ export default function Footer() {
                 { href: "/sobre-o-taipei", label: "Sobre Nós" },
                 { href: "/menu", label: "Menu" },
                 { href: "/brunch", label: "Brunch" },
-                { href: "/espaco-eventos-florianopolis", label: "Eventos" },
+                { href: "/espaco-eventos-florianopolis", label: "Espaço de Eventos" },
               ].map((link, index) => (
                 <motion.li key={link.href} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                   <Link href={link.href} className="text-taipei-beige hover:text-white transition-colors inline-flex items-center gap-2 group">
