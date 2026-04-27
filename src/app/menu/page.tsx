@@ -1,11 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
 import { Coffee, Croissant, Sandwich, Cake, Wine, Leaf, Star, Sparkles } from "lucide-react";
+
+// Note: Metadata export doesn't work in client components
+// Metadata should be in a separate layout.tsx or moved to server component
 
 export default function Menu() {
   const categories = [
