@@ -1,7 +1,8 @@
 "use client";
 
-import { Facebook, Twitter, Linkedin, Share2 } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 interface SocialShareProps {
   url?: string;
@@ -14,22 +15,22 @@ export default function SocialShare({
   title = "Taipei Coffee House - Café e Brunch em Florianópolis",
   description = "Descubra o melhor café e brunch de Florianópolis com vista para o mar"
 }: SocialShareProps) {
+  const [canShare, setCanShare] = useState(false);
+
+  useEffect(() => {
+    setCanShare(!!navigator.share);
+  }, []);
   
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
+    instagram: `https://www.instagram.com/taipeicoffeehouse`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`,
   };
 
   const handleShare = async () => {
     if (navigator.share) {
       try {
-        await navigator.share({
-          title,
-          text: description,
-          url,
-        });
+        await navigator.share({ title, text: description, url });
       } catch (err) {
         console.log('Error sharing:', err);
       }
@@ -38,7 +39,7 @@ export default function SocialShare({
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm text-taipei-brown font-medium">Compartilhar:</span>
+      <span className="text-base text-taipei-brown font-semibold">Compartilhar:</span>
       <div className="flex gap-2">
         <motion.a
           href={shareLinks.facebook}
@@ -46,22 +47,22 @@ export default function SocialShare({
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-[#1877F2] text-white p-2 rounded-full hover:opacity-90 transition-opacity"
+          className="bg-[#1877F2] text-white p-3 rounded-full hover:opacity-90 transition-opacity shadow-md"
           aria-label="Compartilhar no Facebook"
         >
-          <Facebook size={18} />
+          <Facebook size={20} />
         </motion.a>
         
         <motion.a
-          href={shareLinks.twitter}
+          href={shareLinks.instagram}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-[#1DA1F2] text-white p-2 rounded-full hover:opacity-90 transition-opacity"
-          aria-label="Compartilhar no Twitter"
+          className="bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] text-white p-3 rounded-full hover:opacity-90 transition-opacity shadow-md"
+          aria-label="Seguir no Instagram"
         >
-          <Twitter size={18} />
+          <Instagram size={20} />
         </motion.a>
         
         <motion.a
@@ -70,21 +71,21 @@ export default function SocialShare({
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-[#0A66C2] text-white p-2 rounded-full hover:opacity-90 transition-opacity"
+          className="bg-[#0A66C2] text-white p-3 rounded-full hover:opacity-90 transition-opacity shadow-md"
           aria-label="Compartilhar no LinkedIn"
         >
-          <Linkedin size={18} />
+          <Linkedin size={20} />
         </motion.a>
 
-        {typeof navigator !== 'undefined' && navigator.share && (
+        {canShare && (
           <motion.button
             onClick={handleShare}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-taipei-red text-white p-2 rounded-full hover:opacity-90 transition-opacity"
+            className="bg-taipei-red text-white p-3 rounded-full hover:opacity-90 transition-opacity shadow-md"
             aria-label="Compartilhar"
           >
-            <Share2 size={18} />
+            <Share2 size={20} />
           </motion.button>
         )}
       </div>

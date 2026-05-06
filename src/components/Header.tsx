@@ -61,10 +61,9 @@ export default function Header() {
             <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 href="#contato" 
-                className="group bg-gradient-to-r from-taipei-red to-taipei-brown text-white px-6 py-2 rounded-full hover:shadow-lg transition-all relative overflow-hidden"
+                className="bg-gradient-to-r from-taipei-red to-taipei-brown text-white px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-taipei-brown to-taipei-red opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="relative">Reservar</span>
+                Reservar
               </Link>
             </motion.li>
           </ul>
