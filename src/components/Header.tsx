@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
@@ -8,9 +8,9 @@ import { Menu, X, ChevronDown, Calendar, Users, Heart } from "lucide-react";
 const eventosDropdown = [
   {
     href: "/espaco-eventos-florianopolis",
-    label: "Espaco de Eventos",
+    label: "Espaço de Eventos",
     icon: Calendar,
-    desc: "Conheca nosso espaco",
+    desc: "Conheça nosso espaço",
   },
   {
     href: "/service-page/eventos-corporativos-em-florianopolis",
@@ -54,6 +54,7 @@ export default function Header() {
     { href: "/sobre-o-taipei", label: "Sobre" },
     { href: "/menu", label: "Menu" },
     { href: "/brunch", label: "Brunch" },
+    { href: "/cafeteria-com-espaco-kids-florianopolis", label: "Espaço Kids" },
   ];
 
   return (
@@ -77,7 +78,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center lg:gap-8 gap-4">
             {menuItems.map((item) => (
               <motion.li key={item.href} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
                 <Link
