@@ -90,6 +90,7 @@ export default function Header() {
                 </Link>
               </motion.li>
             ))}
+<<<<<<< HEAD
 
             {/* Eventos Dropdown */}
             <li ref={dropdownRef} className="relative">
@@ -142,6 +143,13 @@ export default function Header() {
                 href="/#contato-form"
                 className="bg-taipei-red text-white px-6 py-2 rounded-full transition-shadow hover:shadow-lg font-medium"
               >
+=======
+            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                href="#contato" 
+                className="bg-gradient-to-r from-taipei-red to-taipei-brown text-white px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all"
+              >
+>>>>>>> ec9b886819ab8b5b1dee8748d1b1624ebd951312
                 Reservar
               </Link>
             </motion.li>
