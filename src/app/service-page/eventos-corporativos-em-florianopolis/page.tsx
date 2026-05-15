@@ -12,10 +12,10 @@ import Testimonials from "@/components/Testimonials";
 const spaceImages = [
   { src: "/images/eventos/bar-eventos.jpg", alt: "Bar para eventos corporativos" },
   { src: "/images/eventos/espaco-2andar.jpg", alt: "Espaco segundo andar" },
-  { src: "/imagens site/Espaco_frente_eventos_Taipei_coffee_house_cacupe_florianopolis.jpg", alt: "Frente do espaco" },
-  { src: "/imagens site/Bar_eventos_taipei_coffee_house_florianopolis_cacupe.jpg", alt: "Bar de eventos" },
-  { src: "/imagens site/Eventos.corporativos_Taipei.png", alt: "Eventos corporativos" },
-  { src: "/imagens site/Eventos_edited.jpg", alt: "Espaco de eventos" },
+  { src: "/images/espaco-frente-eventos.jpg", alt: "Frente do espaco" },
+  { src: "/images/bar-eventos-cacupe.jpg", alt: "Bar de eventos" },
+  { src: "/images/eventos-corporativos.png", alt: "Eventos corporativos" },
+  { src: "/images/eventos-edited.jpg", alt: "Espaco de eventos" },
 ];
 
 export default function EventosCorporativos() {
@@ -44,7 +44,7 @@ export default function EventosCorporativos() {
         <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/imagens site/Bar_eventos_taipei_coffee_house_florianopolis_cacupe.jpg"
+              src="/images/bar-eventos-cacupe.jpg"
               alt="Eventos corporativos no Taipei Coffee House"
               fill
               className="object-cover"

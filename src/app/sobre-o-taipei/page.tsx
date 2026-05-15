@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -130,8 +130,8 @@ export default function SobreOTaipei() {
             <div className="grid grid-cols-3 gap-4 md:gap-6">
               {[
                 { src: "/images/sobre/fundadora.jpg", alt: "Daiane Shuai — fundadora" },
-                { src: "/imagens site/Daiane_Shuai_fundadora_Taipei_coffee_house_cacupe_florianopolis.jpg", alt: "Daiane com o cardápio" },
-                { src: "/imagens site/Daiane_Shuai_fundadora_Taipei_coffee_house_cacupe_floripa_child.png", alt: "Daiane e família" },
+                { src: "/images/daiane-cardapio.jpg", alt: "Daiane com o cardápio" },
+                { src: "/images/daiane-familia.png", alt: "Daiane e família" },
               ].map((img, i) => (
                 <motion.div
                   key={i}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
@@ -8,49 +8,49 @@ export default function InstagramFeed() {
   const instagramPosts = [
     {
       id: 1,
-      image: "/imagens site/IMG_20260318_143834388_HDR.jpeg",
+      image: "/images/insta-1.jpeg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 2,
-      image: "/imagens site/IMG_20260318_144718338_HDR.jpg",
+      image: "/images/insta-2.jpg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 3,
-      image: "/imagens site/IMG_20260318_150258551_HDR.jpeg",
+      image: "/images/insta-3.jpeg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 4,
-      image: "/imagens site/IMG_20260318_163852739_HDR.jpeg",
+      image: "/images/insta-4.jpeg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 5,
-      image: "/imagens site/IMG_20260311_151702893_HDR.jpg",
+      image: "/images/insta-5.jpg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 6,
-      image: "/imagens site/IMG_20260311_153245214_HDR.jpg",
+      image: "/images/insta-6.jpg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 7,
-      image: "/imagens site/IMG_20260305_143229784_HDR.jpg",
+      image: "/images/insta-7.jpg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
     {
       id: 8,
-      image: "/imagens site/IMG_20260305_144711834_HDR.jpg",
+      image: "/images/insta-8.jpg",
       alt: "Taipei Coffee House",
       link: "https://www.instagram.com/taipeicoffeehouse/"
     },
