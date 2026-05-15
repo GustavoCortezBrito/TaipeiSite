@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
@@ -8,21 +8,21 @@ import { Menu, X, ChevronDown, Calendar, Users, Heart } from "lucide-react";
 const eventosDropdown = [
   {
     href: "/espaco-eventos-florianopolis",
-    label: "Espaço de Eventos",
+    label: "Espaco de Eventos",
     icon: Calendar,
-    desc: "Conheça nosso espaço",
+    desc: "Conheca nosso espaco",
   },
   {
     href: "/service-page/eventos-corporativos-em-florianopolis",
     label: "Eventos Corporativos",
     icon: Users,
-    desc: "Reuniões e confraternizações",
+    desc: "Reunioes e confraternizacoes",
   },
   {
     href: "/service-page/eventos-sociais",
     label: "Eventos Sociais",
     icon: Heart,
-    desc: "Aniversários e celebrações",
+    desc: "Aniversarios e celebracoes",
   },
 ];
 
@@ -39,7 +39,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fecha dropdown ao clicar fora
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -86,23 +85,22 @@ export default function Header() {
                   className="text-taipei-brown hover:text-taipei-red transition-colors relative group font-medium"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-taipei-red to-taipei-brown transition-all group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-taipei-red transition-all group-hover:w-full" />
                 </Link>
               </motion.li>
             ))}
-<<<<<<< HEAD
 
             {/* Eventos Dropdown */}
             <li ref={dropdownRef} className="relative">
               <button
                 onClick={() => setEventosOpen(!eventosOpen)}
-                className="flex items-center gap-1 text-taipei-brown hover:text-taipei-red transition-colors font-medium group"
+                className="flex items-center gap-1 text-taipei-brown hover:text-taipei-red transition-colors font-medium relative group"
               >
                 Eventos
                 <motion.span animate={{ rotate: eventosOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
                   <ChevronDown size={16} />
                 </motion.span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-taipei-red to-taipei-brown transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-taipei-red transition-all group-hover:w-full" />
               </button>
 
               <AnimatePresence>
@@ -137,19 +135,12 @@ export default function Header() {
               </AnimatePresence>
             </li>
 
-            {/* Botão Reservar → ancora no forms do FAQ */}
+            {/* Botao Reservar */}
             <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/#contato-form"
                 className="bg-taipei-red text-white px-6 py-2 rounded-full transition-shadow hover:shadow-lg font-medium"
               >
-=======
-            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="#contato" 
-                className="bg-gradient-to-r from-taipei-red to-taipei-brown text-white px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all"
-              >
->>>>>>> ec9b886819ab8b5b1dee8748d1b1624ebd951312
                 Reservar
               </Link>
             </motion.li>

@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedSection from "@/components/AnimatedSection";
-import SocialShare from "@/components/SocialShare";
 import FAQ from "@/components/FAQ";
 import InstagramFeed from "@/components/InstagramFeed";
 import ContactSection from "@/components/ContactSection";
@@ -105,11 +104,8 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> ec9b886819ab8b5b1dee8748d1b1624ebd951312
         </section>
 
         {/* Sobre Section */}
@@ -365,168 +361,14 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-<<<<<<< HEAD
         {/* Instagram Feed Section */}
         <InstagramFeed />
 
-        {/* Contact Section */}
-        <ContactSection />
-=======
-        {/* Serviços Section */}
-        <AnimatedSection id="servicos" className="py-24 px-4 bg-white">
-          <div className="container mx-auto max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-4xl md:text-5xl font-serif text-taipei-red mb-4">O Que Oferecemos</h2>
-              <div className="w-24 h-1 bg-taipei-red mx-auto mb-6" />
-              <p className="text-lg text-taipei-brown max-w-2xl mx-auto">
-                Do café da manhã ao fim da tarde, o Taipei Coffee House tem a experiência certa para cada momento do seu dia em Florianópolis.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-10">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0 }}
-                className="flex gap-5"
-              >
-                <div className="flex-shrink-0 w-14 h-14 bg-taipei-cream rounded-full flex items-center justify-center">
-                  <Coffee className="text-taipei-red" size={28} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-taipei-red mb-2">Grãos Selecionados e Preparo Artesanal</h3>
-                  <p className="text-taipei-brown leading-relaxed">
-                    Trabalhamos com grãos selecionados de origem única, preparados por baristas treinados. Espresso, cappuccino, coado, cold brew e muito mais. Cada xícara é uma experiência sensorial pensada para quem aprecia um café de verdade. Somos referência em cafés especiais no norte da ilha de Florianópolis.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="flex gap-5"
-              >
-                <div className="flex-shrink-0 w-14 h-14 bg-taipei-cream rounded-full flex items-center justify-center">
-                  <UtensilsCrossed className="text-taipei-red" size={28} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-taipei-red mb-2">Cardápio de Brunch e Almoço em Cacupé</h3>
-                  <p className="text-taipei-brown leading-relaxed">
-                    Nosso brunch de fim de semana é um dos mais queridos de Florianópolis. Pratos autorais com influência asiática, opções doces e salgadas, sucos naturais e cafés especiais compõem um cardápio pensado para momentos de prazer à mesa. No almoço, servimos pratos executivos e à la carte com ingredientes frescos e sazonais.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex gap-5"
-              >
-                <div className="flex-shrink-0 w-14 h-14 bg-taipei-cream rounded-full flex items-center justify-center">
-                  <Calendar className="text-taipei-red" size={28} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-taipei-red mb-2">Estrutura Completa para Celebrações</h3>
-                  <p className="text-taipei-brown leading-relaxed">
-                    Dispomos de espaço exclusivo para eventos corporativos, aniversários, formaturas, confraternizações e celebrações especiais. Com capacidade para grupos, vista para o mar e estrutura completa, o Taipei Coffee House é o cenário ideal para tornar qualquer evento em Florianópolis inesquecível. Atendemos tanto eventos sociais quanto corporativos com cardápio personalizado.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex gap-5"
-              >
-                <div className="flex-shrink-0 w-14 h-14 bg-taipei-cream rounded-full flex items-center justify-center">
-                  <Star className="text-taipei-red" size={28} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-taipei-red mb-2">Ambiente Familiar com Espaço Kids</h3>
-                  <p className="text-taipei-brown leading-relaxed">
-                    Pensamos em toda a família. Nosso espaço kids permite que os pequenos brinquem com segurança enquanto os adultos relaxam e aproveitam a vista para o mar. Somos pet friendly na área externa e oferecemos estacionamento gratuito. Um ambiente acolhedor para toda a família em Cacupé, Florianópolis.
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Por que nos visitar Section */}
-        <AnimatedSection id="por-que-visitar" className="py-24 px-4 bg-taipei-cream">
-          <div className="container mx-auto max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-4xl md:text-5xl font-serif text-taipei-red mb-4">Por Que Visitar o Taipei Coffee House</h2>
-              <div className="w-24 h-1 bg-taipei-red mx-auto mb-6" />
-            </motion.div>
-
-            <div className="space-y-6 text-lg text-taipei-brown leading-relaxed">
-              <p>
-                O Taipei Coffee House nasceu do sonho de criar um espaço onde gastronomia, natureza e cultura se encontram. Localizado na Estrada Haroldo Soares Glavan, em Cacupé — um dos bairros mais tranquilos e charmosos de Florianópolis — nosso restaurante e café oferece uma vista privilegiada para o mar que transforma qualquer refeição em uma experiência memorável.
-              </p>
-              <p>
-                A influência asiática permeia cada detalhe do Taipei: da decoração ao cardápio, passando pelo nome que homenageia a capital de Taiwan. Essa fusão cultural cria um ambiente único em Florianópolis, onde você pode saborear um café especial enquanto contempla as águas da Baía Norte. É o equilíbrio perfeito entre o sofisticado e o acolhedor.
-              </p>
-              <p>
-                Para quem busca um <strong>restaurante em Cacupé</strong>, uma <strong>cafeteria com vista para o mar em Florianópolis</strong> ou um <strong>espaço para eventos no norte da ilha</strong>, o Taipei Coffee House reúne tudo isso em um só lugar. Atendemos de terça a domingo, com horários pensados para o seu conforto: de terça a sexta das 11h às 20h, sábados das 10h às 20h e domingos das 10h às 19h.
-              </p>
-              <p>
-                Seja você morador de Florianópolis ou turista descobrindo a ilha pela primeira vez, o Taipei Coffee House é uma parada obrigatória. Venha para o café, fique pelo almoço, volte para o brunch de fim de semana. Cada visita revela um novo motivo para amar este espaço único em Cacupé.
-              </p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Link
-                href="/sobre-o-taipei"
-                className="group bg-taipei-red text-white px-8 py-4 rounded-full hover:bg-taipei-brown transition-all hover:shadow-xl inline-flex items-center justify-center gap-2"
-              >
-                Nossa História
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/menu"
-                className="group border-2 border-taipei-red text-taipei-red px-8 py-4 rounded-full hover:bg-taipei-red hover:text-white transition-all hover:shadow-xl inline-flex items-center justify-center gap-2"
-              >
-                Ver Cardápio
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-          </div>
-        </AnimatedSection>
-
-        {/* Social Share */}
-        <div className="py-8 px-4 bg-white flex justify-center">
-          <SocialShare />
-        </div>
->>>>>>> ec9b886819ab8b5b1dee8748d1b1624ebd951312
-
         {/* FAQ Section */}
         <FAQ />
+
+        {/* Contact Section */}
+        <ContactSection />
       </main>
       <Footer />
     </>
