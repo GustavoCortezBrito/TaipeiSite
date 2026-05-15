@@ -1,11 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import { Facebook, Twitter, Linkedin, Share2 } from "lucide-react";
-=======
 import { Facebook, Instagram, Linkedin, Share2 } from "lucide-react";
->>>>>>> ec9b886819ab8b5b1dee8748d1b1624ebd951312
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -23,7 +18,7 @@ export default function SocialShare({
   const [canShare, setCanShare] = useState(false);
 
   useEffect(() => {
-    setCanShare(!!navigator.share);
+    setCanShare(typeof navigator !== 'undefined' && typeof navigator.share !== 'undefined');
   }, []);
   
   const shareLinks = {
@@ -31,12 +26,6 @@ export default function SocialShare({
     instagram: `https://www.instagram.com/taipeicoffeehouse`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
   };
-
-  const [canShare, setCanShare] = useState(false);
-
-  useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && typeof navigator.share !== 'undefined');
-  }, []);
 
   const handleShare = async () => {
     if (navigator.share) {

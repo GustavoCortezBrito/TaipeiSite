@@ -1,10 +1,11 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
+import { Heart, Cake, PartyPopper, Sparkles, Camera, Music } from "lucide-react";
 import Testimonials from "@/components/Testimonials";
 import Image from "next/image";
 
