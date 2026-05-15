@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { Briefcase, Users, Coffee, Presentation, Wifi, Clock } from "lucide-react";
 
@@ -193,15 +194,20 @@ export default function EventosCorporativos() {
             <p className="text-xl mb-10 opacity-90">
               Entre em contato para receber uma proposta personalizada
             </p>
-            <motion.button
+            <motion.a
+              href="https://wa.me/5548988798141"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-taipei-brown px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors"
+              className="inline-block bg-white text-taipei-brown px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors"
             >
               Solicitar Orçamento
-            </motion.button>
+            </motion.a>
           </div>
         </AnimatedSection>
+
+        <ContactSection />
       </main>
       <Footer />
     </>

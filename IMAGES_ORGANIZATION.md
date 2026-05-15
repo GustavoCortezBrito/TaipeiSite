@@ -1,140 +1,157 @@
 # Organização das Imagens do Taipei Coffee House
 
-## ✅ Imagens Já Organizadas
+## ✅ Imagens Já Organizadas e Implementadas
 
-### Hero/Banner
-- `hero-main.jpg` - IMG_4466 (1).jpg - Vista do restaurante
+### 🏠 HOME PAGE (`src/app/page.tsx`)
+- **Hero Background**: `/images/hero/hero-main.jpg` - Vista principal do restaurante ✅
 
-### Brunch
-- `brunch-hero.png` - brunch_taipei_cacupe_florianopolis.png
+### 🍽️ MENU PAGE (`src/app/menu/page.tsx`)
+- **Hero Background**: `/images/menu/cafe-especial.jpg` - Café especial ✅
+- **Grid de Imagens**:
+  - `/images/menu/cafe-2.jpg` - Café especial ✅
+  - `/images/menu/pasteis.jpg` - Pastéis artesanais ✅
+  - `/images/menu/sanduiche-baguete.jpg` - Sanduíche baguete ✅
+  - `/images/menu/sanduiches.jpg` - Sanduíches variados ✅
+  - `/images/menu/cafe-especial.jpg` - Café especial ✅
 
-## 📋 Sugestões de Organização
+### 🥐 BRUNCH PAGE (`src/app/brunch/page.tsx`)
+- **Hero Background**: `/images/brunch/brunch-hero.png` - Brunch principal ✅
+- **Grid de Imagens**:
+  - `/images/brunch/brunch-2.png` - Brunch especial ✅
+  - `/images/brunch/brunch-mesa.jpg` - Mesa de brunch ✅
+  - `/images/brunch/brunch-hero.png` - Brunch completo ✅
 
-### 🏠 HERO/BANNER (Imagens principais)
-- `IMG_4466 (1).jpg` ✅ - Vista externa (JÁ COPIADA)
-- `Esapaço.externo_Taipei_Coffee_House_Floripa_Cacupe.jpg` - Área externa
-- `IMG_4952.jpg` - Vista panorâmica
-- `IMG_5640.jpg` - Ambiente com vista
+### 👥 SOBRE PAGE (`src/app/sobre-o-taipei/page.tsx`)
+- **Fundadora**: `/images/sobre/fundadora.jpg` - Daiane Shuai ✅
+- **História**: `/images/sobre/historia.jpg` - História do Taipei ✅
+- **Vista**: `/images/ambiente/vista-mar.jpg` - Vista para o mar ✅
 
-### 🍽️ MENU (Pratos e bebidas)
-**Cafés:**
-- `DALL·E 2024-12-14 19.53.28` - Cappuccino
-- `IMG_7126.jpg` - Café especial
-- `IMG_8317.jpg` - Café
+### 🎉 EVENTOS PAGE (`src/app/espaco-eventos-florianopolis/page.tsx`)
+- **Hero Background**: `/images/eventos/bar-eventos.jpg` - Bar de eventos ✅
+- **Grid de Imagens**:
+  - `/images/eventos/espaco-2andar.jpg` - Espaço do segundo andar ✅
+  - `/images/ambiente/area-externa.jpg` - Área externa ✅
 
-**Comidas:**
-- `Fotos.pasteis.jpeg` - Pastéis
-- `Fotos.sanduiche.baguete.jpeg` - Sanduíche baguete
-- `Fotos.sanduiche.diverso.jpeg` - Sanduíches variados
-- `Fotos.sanduiche.queijo.jpeg` - Sanduíche de queijo
-- `DALL·E 2024-12-14 19.43.52` - Salgados artesanais
-- `DALL·E 2024-12-14 19.46.56` - Salada
+### 👶 KIDS PAGE (`src/app/cafeteria-com-espaco-kids-florianopolis/page.tsx`)
+- **Parquinho**: `/images/eventos/parquinho-kids.jpg` - Espaço kids ✅
 
-**Bebidas:**
-- `DALL·E 2024-12-14 19.55.42` - Sucos e bebidas
-- `DALL·E 2024-12-14 19.57.57` - Cervejas
-- `chopp heiniken.webp` - Chopp
+### 🏢 RESTAURANTE PAGE (`src/app/restaurante-em-cacupe/page.tsx`)
+- **Hero Background**: `/images/ambiente/vista-mar.jpg` - Vista para o mar ✅
+- **Interior**: `/images/ambiente/interior-1.jpg` - Interior do restaurante ✅
+- **Grid de Imagens**:
+  - `/images/ambiente/interior-2.jpg` - Interior ✅
+  - `/images/ambiente/area-externa.jpg` - Área externa ✅
+  - `/images/hero/hero-panorama.jpg` - Vista panorâmica ✅
 
-### 🥐 BRUNCH
-- `brunch_taipei_cacupe_florianopolis.png` ✅ (JÁ COPIADA)
-- `brunch_taipei_cacupe_florianopolis_2.png`
-- `IMG_5849.jpg` - Mesa de brunch
-- `IMG_7205.jpg` - Brunch servido
+## 📋 Estrutura de Pastas
 
-### 🎉 EVENTOS
-**Espaço:**
-- `Espaço_2andar_Taipei_coffee_house_Florianopolis_Cacupe.jpg` - 2º andar
-- `Espaço_frente_eventos_Taipei_coffee_house_cacupe_florianopolis.jpg` - Frente eventos
-- `Bar_eventos_taipei_coffee_house_florianopolis_cacupe.jpg` - Bar de eventos
-- `Eventos_edited.jpg` - Eventos gerais
-- `Pessoas.evento_Taipei_coffee_house_Cacupe_Florianopolis.jpg` - Pessoas em evento
+```
+public/images/
+├── hero/
+│   ├── hero-main.jpg ✅
+│   ├── hero-panorama.jpg ✅
+│   └── hero-vista.jpg
+├── menu/
+│   ├── cafe-2.jpg ✅
+│   ├── cafe-especial.jpg ✅
+│   ├── pasteis.jpg ✅
+│   ├── sanduiche-baguete.jpg ✅
+│   └── sanduiches.jpg ✅
+├── brunch/
+│   ├── brunch-2.png ✅
+│   ├── brunch-hero.png ✅
+│   └── brunch-mesa.jpg ✅
+├── eventos/
+│   ├── bar-eventos.jpg ✅
+│   ├── espaco-2andar.jpg ✅
+│   └── parquinho-kids.jpg ✅
+├── ambiente/
+│   ├── area-externa.jpg ✅
+│   ├── interior-1.jpg ✅
+│   ├── interior-2.jpg ✅
+│   └── vista-mar.jpg ✅
+└── sobre/
+    ├── fundadora.jpg ✅
+    └── historia.jpg ✅
+```
 
-**Tipos:**
-- `Eventos.corporativos_Taipei.png` - Eventos corporativos
-- `Eventos.sociais_Taipei.png` - Eventos sociais
+## 🎯 Status do Projeto
 
-**Kids:**
-- `Parquinho_cafeteria_restaurante_espaço_kids_cacupe_florianopolis.jpg` - Parquinho
+### ✅ Concluído
+1. Todas as páginas principais têm imagens reais implementadas
+2. Hero sections com imagens de fundo
+3. Grids de imagens nas páginas de conteúdo
+4. Otimização com Next.js Image component
+5. Build bem-sucedido sem erros
+6. TypeScript error no SocialShare.tsx corrigido
 
-### 🏢 AMBIENTE
-**Interior:**
-- `IMG_0062.jpg` - Interior
-- `IMG_0191.jpg` - Ambiente interno
-- `IMG_0227.jpg` - Mesas
-- `IMG_0278.jpg` - Decoração
-- `DSCF0471.jpg` - Ambiente
-- `DSCF1657 (1).JPG` - Interior
-- `DSCF1775.JPG` - Espaço interno
+### 📝 Próximos Passos Sugeridos
 
-**Exterior:**
-- `IMG_4559.jpg` - Área externa
-- `IMG_4626.jpg` - Vista externa
-- `IMG_4670.jpg` - Fachada
-- `IMG_4777.jpg` - Exterior
+1. **Converter Imagens HEIC/HEIF** (15+ arquivos em `public/imagens site/`)
+   - IMG_0581.heif, IMG_0671.heif, IMG_1086.HEIC, etc.
+   - Converter para JPG/PNG para compatibilidade web
 
-**Vista:**
-- `IMG_5102 (1).jpg` - Vista para o mar
-- `IMG_5203.jpg` - Paisagem
-- `IMG_5204.jpg` - Vista
+2. **Otimizar Tamanho das Imagens**
+   - Comprimir imagens grandes
+   - Redimensionar para tamanhos apropriados
+   - Usar ferramentas como ImageOptim, TinyPNG, ou Sharp
 
-### 👥 SOBRE
-**Fundadora:**
-- `Daiane_Shuai_fundadora_Taipei_coffee_house_cacupe_florianopolis.jpg` - Daiane
-- `Daiane_Shuai_fundadora_Taipei_coffee_house_cacupe_floripa.png` - Daiane
-- `Daiane_Shuai_fundadora_Taipei_coffee_house_cacupe_floripa_child.png` - Daiane criança
+3. **Adicionar Mais Imagens**
+   - Usar mais imagens da pasta `public/imagens site/`
+   - Adicionar galeria de fotos
+   - Implementar lightbox para visualização ampliada
 
-**História:**
-- `Taipei_Taiwan_Taipei_coffee_house_cacupe_florianopolis.png` - Taiwan/Taipei
-- `264735fb-30e4-4b64-a465-7e0fbb6f7905.jpeg` - História
-- `2cfa7591-4964-4840-a235-ba86e417fc4c.jpeg` - História
-- `400d43df-fe53-4b80-929a-b3c38c6ad36d.jpeg` - História
+4. **Favicon e Icons**
+   - Substituir `public/favicon.ico` com logo real
+   - Substituir `public/apple-touch-icon.png` com logo real
+   - Adicionar outros tamanhos de ícones
 
-### 🎨 LOGOS E ÍCONES
-- `Prancheta 41 cópia 20.png` - Logo principal
-- `Prancheta 41 cópia 11.png` - Logo variação
-- `Prancheta 41 cópia 4.png` - Logo variação
-- `Prancheta 41.png` - Logo original
-- `whatsapp taipei.png` - Ícone WhatsApp
-- `Pet.friendly_cachorros_cafeteria_restaurante_florianopolis_cacupe.png` - Pet friendly
+5. **Performance**
+   - Implementar lazy loading para imagens abaixo da dobra
+   - Adicionar blur placeholder para melhor UX
+   - Configurar CDN para servir imagens
 
-### 📄 DOCUMENTOS (Não usar no site)
-- `brunch_taipei_cacupe_florianopolis.pdf` - PDF do brunch
-- `Taipei Coffee House_Cardapio.pdf` - Cardápio PDF
-- Vários PDFs `ea495a_433463a471ec4a3baffe0094547de841_*.pdf`
+6. **Funcionalidades**
+   - Implementar formulários de contato/reserva
+   - Adicionar integração com Google Maps
+   - Implementar galeria de fotos interativa
 
-### 🔄 FORMATOS ESPECIAIS (Converter)
-**HEIC/HEIF (precisam ser convertidos para JPG/PNG):**
-- `IMG_0581.heif`
-- `IMG_0671.heif`
-- `IMG_1086.HEIC`
-- `IMG_1167.heic`
-- `IMG_1334.HEIC`
-- `IMG_1369.HEIC`
-- `IMG_2728.heif`
-- `IMG_2769.heif`
-- `IMG_3480.heif`
-- `IMG_7843.HEIC`
-- `IMG_8233.HEIC`
-- `IMG_8391.HEIC`
-- `IMG_8395.HEIC`
-- `IMG_8858.heic`
-- `IMG_8943.heic`
+## 💡 Dicas de Uso
 
-## 🎯 Próximos Passos
+### Como Adicionar Novas Imagens
 
-1. ✅ Copiar imagens principais (hero e brunch) - FEITO
-2. ⏳ Organizar imagens de menu por categoria
-3. ⏳ Organizar imagens de eventos
-4. ⏳ Organizar imagens de ambiente
-5. ⏳ Converter imagens HEIC/HEIF para JPG
-6. ⏳ Otimizar todas as imagens (reduzir tamanho)
-7. ⏳ Atualizar código para usar as imagens reais
+1. Coloque a imagem na pasta apropriada em `public/images/`
+2. Use o componente Next.js Image:
 
-## 💡 Dica
+```tsx
+import Image from "next/image";
 
-Você quer que eu:
-1. **Organize automaticamente** todas as imagens nas pastas corretas?
-2. **Atualize o código** para usar as imagens reais?
-3. **Converta** os arquivos HEIC/HEIF para JPG?
+<Image
+  src="/images/categoria/nome-arquivo.jpg"
+  alt="Descrição da imagem"
+  fill // Para imagens responsivas
+  className="object-cover"
+/>
+```
 
-Me avise e eu faço isso para você!
+### Otimização Automática
+
+O Next.js otimiza automaticamente as imagens:
+- Converte para WebP quando possível
+- Redimensiona para diferentes tamanhos de tela
+- Lazy loading por padrão
+- Blur placeholder opcional
+
+### SEO
+
+Sempre adicione `alt` descritivo para:
+- Acessibilidade
+- SEO
+- Fallback quando imagem não carrega
+
+## 🔄 Imagens Originais
+
+As 140+ imagens originais do Wix estão preservadas em:
+`public/imagens site/`
+
+Você pode organizar mais imagens dessa pasta conforme necessário.

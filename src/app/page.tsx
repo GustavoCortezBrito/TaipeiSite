@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import FAQ from "@/components/FAQ";
+import InstagramFeed from "@/components/InstagramFeed";
+import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { Coffee, UtensilsCrossed, Calendar, Sparkles, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
@@ -107,17 +109,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2, repeat: Infinity, repeatType: "reverse" }}
-          >
-            <div className="w-6 h-10 border-2 border-taipei-red rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-taipei-red rounded-full mt-2" />
-            </div>
-          </motion.div>
+
         </section>
 
         {/* Sobre Section */}
@@ -313,7 +305,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: item.delay }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all"
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all cursor-pointer"
                 >
                   {item.link ? (
                     <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
@@ -372,6 +364,12 @@ export default function Home() {
             </motion.div>
           </div>
         </AnimatedSection>
+
+        {/* Instagram Feed Section */}
+        <InstagramFeed />
+
+        {/* Contact Section */}
+        <ContactSection />
 
         {/* FAQ Section */}
         <FAQ />

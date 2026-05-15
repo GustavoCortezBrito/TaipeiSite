@@ -3,9 +3,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { Calendar, Users, Sparkles, Heart, Briefcase, PartyPopper, Camera, Music, UtensilsCrossed } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function EspacoEventos() {
   const eventTypes = [
@@ -63,16 +65,28 @@ export default function EspacoEventos() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] bg-gradient-to-br from-taipei-red via-taipei-brown to-taipei-red flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/eventos/bar-eventos.jpg"
+              alt="Espaço para eventos no Taipei Coffee House"
+              fill
+              className="object-cover"
+              priority
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-taipei-red/80 via-taipei-brown/70 to-taipei-red/80" />
+          </div>
+
           <motion.div
-            className="absolute inset-0"
+            className="absolute inset-0 z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.2 }}
           >
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20" />
           </motion.div>
 
-          <div className="relative text-center px-4 z-10 text-white">
+          <div className="relative text-center px-4 z-20 text-white">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -108,8 +122,39 @@ export default function EspacoEventos() {
           <div className="container mx-auto max-w-6xl">
             <AnimatedSection>
               <h2 className="text-4xl md:text-5xl font-serif text-taipei-red text-center mb-4">Tipos de Eventos</h2>
-              <div className="w-24 h-1 bg-taipei-red mx-auto mb-16" />
+              <div className="w-24 h-1 bg-taipei-red mx-auto mb-12" />
             </AnimatedSection>
+
+            {/* Eventos Images */}
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+              >
+                <Image
+                  src="/images/eventos/espaco-2andar.jpg"
+                  alt="Espaço do segundo andar para eventos"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+              >
+                <Image
+                  src="/images/ambiente/area-externa.jpg"
+                  alt="Área externa para eventos"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {eventTypes.map((type, index) => (
@@ -210,23 +255,31 @@ export default function EspacoEventos() {
               Entre em contato e vamos criar juntos um evento inesquecível
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <motion.a
+                href="https://wa.me/5548988798141"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors"
               >
                 WhatsApp
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/taipeicoffeehouse/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 Instagram
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </AnimatedSection>
+
+        <ContactSection />
       </main>
       <Footer />
     </>

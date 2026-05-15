@@ -1,11 +1,12 @@
 "use client";
 
-import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { Heart, Users, Award, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function SobreOTaipei() {
   const values = [
@@ -85,20 +86,50 @@ export default function SobreOTaipei() {
                 </p>
               </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-taipei-cream rounded-3xl p-8 h-96 flex items-center justify-center"
-                  >
-                    <div className="text-center">
-                      <MapPin className="text-taipei-red mx-auto mb-4" size={64} />
-                      <h3 className="text-2xl font-serif text-taipei-red mb-4">Cacupé, Florianópolis</h3>
-                      <p className="text-taipei-brown mb-2">Estrada Haroldo Soares Glavan, 3010</p>
-                      <p className="text-taipei-brown mb-4">Cacupé - Florianópolis, SC</p>
-                      <p className="text-taipei-brown text-sm">CEP: 88050-005</p>
-                    </div>
-                  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative h-96 rounded-3xl overflow-hidden shadow-2xl"
+              >
+                <Image
+                  src="/images/sobre/fundadora.jpg"
+                  alt="Daiane Shuai - Fundadora do Taipei Coffee House"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
+
+            {/* História Images */}
+            <div className="grid md:grid-cols-2 gap-6 mt-16">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+              >
+                <Image
+                  src="/images/sobre/historia.jpg"
+                  alt="História do Taipei Coffee House"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+              >
+                <Image
+                  src="/images/ambiente/vista-mar.jpg"
+                  alt="Vista para o mar em Cacupé"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
             </div>
           </div>
         </AnimatedSection>
@@ -167,6 +198,8 @@ export default function SobreOTaipei() {
             </p>
           </div>
         </AnimatedSection>
+
+        <ContactSection />
       </main>
       <Footer />
     </>

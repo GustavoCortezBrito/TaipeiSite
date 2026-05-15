@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
-import SocialShare from "./SocialShare";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,7 +28,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <motion.a
-                href="https://instagram.com/taipeicoffeehouse"
+                href="https://www.instagram.com/taipeicoffeehouse/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
@@ -39,7 +38,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </motion.a>
               <motion.a
-                href="https://facebook.com/taipeicoffeehouse"
+                href="https://www.facebook.com/taipeicoffeehouse"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
@@ -98,7 +97,7 @@ export default function Footer() {
               {[
                 { href: "/service-page/eventos-corporativos-em-florianopolis", label: "Eventos Corporativos" },
                 { href: "/service-page/eventos-sociais", label: "Eventos Sociais" },
-                { href: "/cafeteria-com-espaco-kids-florianopolis", label: "Espaço Kids" },
+                { href: "/cafeteria-com-espaco-kids-florianopolis", label: "Espaço Kids & Pet Friendly" },
               ].map((link) => (
                 <motion.li key={link.href} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                   <Link href={link.href} className="text-taipei-beige hover:text-white transition-colors inline-flex items-center gap-2 group">
@@ -121,30 +120,46 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-taipei-beige">
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="flex-shrink-0 mt-0.5 text-white" />
-                <span>Estrada Haroldo Soares Glavan, 3010 - Cacupé, Florianópolis - SC, 88050-005</span>
+                <a
+                  href="https://maps.google.com/?q=Taipei+Coffee+House+Cacupe+Florianopolis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Estrada Haroldo Soares Glavan, 3010 - Cacupé, Florianópolis - SC, 88050-005
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={18} className="flex-shrink-0 text-white" />
-                <span>(48) 98879-8141</span>
+                <a
+                  href="https://wa.me/5548988798141"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  (48) 98879-8141
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={18} className="flex-shrink-0 text-white" />
-                <span>contato@taipeicoffeehouse.com.br</span>
+                <a
+                  href="mailto:contato@taipeicoffeehouse.com.br"
+                  className="hover:text-white transition-colors"
+                >
+                  contato@taipeicoffeehouse.com.br
+                </a>
               </li>
             </ul>
           </motion.div>
         </div>
 
         <motion.div 
-          className="border-t border-taipei-beige/30 mt-8 pt-8 text-center text-sm text-taipei-beige space-y-4"
+          className="border-t border-taipei-beige/30 mt-8 pt-8 text-center text-sm text-taipei-beige"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="flex justify-center">
-            <SocialShare />
-          </div>
           <p>&copy; {currentYear} Taipei Coffee House. Todos os direitos reservados.</p>
         </motion.div>
       </div>

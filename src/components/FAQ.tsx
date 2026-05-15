@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
 interface FAQItem {
@@ -100,6 +100,126 @@ const faqData: FAQItem[] = [
   }
 ];
 
+function ContactForm() {
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    // Monta link do WhatsApp com os dados do formulário
+    const msg = `Olá! Me chamo *${form.name}*.\n📧 E-mail: ${form.email}${form.phone ? `\n📱 Telefone: ${form.phone}` : ""}\n\n${form.message}`;
+    const url = `https://wa.me/5548988798141?text=${encodeURIComponent(msg)}`;
+    setLoading(false);
+    setSubmitted(true);
+    setTimeout(() => window.open(url, "_blank"), 800);
+  };
+
+  if (submitted) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex flex-col items-center justify-center py-8 gap-4 text-center"
+      >
+        <CheckCircle className="text-taipei-red" size={56} />
+        <p className="text-2xl font-serif text-taipei-red">Mensagem enviada!</p>
+        <p className="text-taipei-brown">Você será redirecionado para o WhatsApp em instantes.</p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {/* Nome */}
+      <div className="flex flex-col gap-1">
+        <label htmlFor="name" className="text-sm font-medium text-taipei-brown">
+          Nome <span className="text-taipei-red">*</span>
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Seu nome"
+          className="border border-taipei-beige rounded-xl px-4 py-3 text-taipei-brown placeholder-taipei-beige focus:outline-none focus:border-taipei-red transition-colors bg-taipei-cream/30"
+        />
+      </div>
+
+      {/* E-mail */}
+      <div className="flex flex-col gap-1">
+        <label htmlFor="email" className="text-sm font-medium text-taipei-brown">
+          E-mail <span className="text-taipei-red">*</span>
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          value={form.email}
+          onChange={handleChange}
+          placeholder="seu@email.com"
+          className="border border-taipei-beige rounded-xl px-4 py-3 text-taipei-brown placeholder-taipei-beige focus:outline-none focus:border-taipei-red transition-colors bg-taipei-cream/30"
+        />
+      </div>
+
+      {/* Telefone */}
+      <div className="flex flex-col gap-1 md:col-span-2">
+        <label htmlFor="phone" className="text-sm font-medium text-taipei-brown">
+          Telefone / WhatsApp
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          value={form.phone}
+          onChange={handleChange}
+          placeholder="(48) 99999-9999"
+          className="border border-taipei-beige rounded-xl px-4 py-3 text-taipei-brown placeholder-taipei-beige focus:outline-none focus:border-taipei-red transition-colors bg-taipei-cream/30"
+        />
+      </div>
+
+      {/* Mensagem */}
+      <div className="flex flex-col gap-1 md:col-span-2">
+        <label htmlFor="message" className="text-sm font-medium text-taipei-brown">
+          Mensagem <span className="text-taipei-red">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={4}
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Escreva sua dúvida ou mensagem..."
+          className="border border-taipei-beige rounded-xl px-4 py-3 text-taipei-brown placeholder-taipei-beige focus:outline-none focus:border-taipei-red transition-colors bg-taipei-cream/30 resize-none"
+        />
+      </div>
+
+      {/* Botão */}
+      <div className="md:col-span-2 flex justify-center">
+        <motion.button
+          type="submit"
+          disabled={loading}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="inline-flex items-center gap-2 bg-taipei-red text-white px-10 py-4 rounded-full hover:bg-taipei-brown transition-all hover:shadow-lg font-semibold disabled:opacity-60"
+        >
+          <Send size={18} />
+          {loading ? "Enviando..." : "Enviar Mensagem"}
+        </motion.button>
+      </div>
+    </form>
+  );
+}
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -197,19 +317,20 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-16"
+          id="contato-form"
         >
-          <p className="text-taipei-brown mb-4">
-            Não encontrou a resposta que procurava?
-          </p>
-          <a
-            href="https://wa.me/5548988798141"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-taipei-red text-white px-8 py-3 rounded-full hover:bg-taipei-brown transition-all hover:shadow-lg"
-          >
-            Entre em Contato
-          </a>
+          <div className="bg-white rounded-2xl shadow-lg border border-taipei-beige/30 p-8 md:p-10">
+            <div className="text-center mb-8">
+              <p className="text-2xl font-serif text-taipei-red mb-2">
+                Não encontrou a resposta que procurava?
+              </p>
+              <p className="text-taipei-brown">
+                Envie sua mensagem e responderemos em breve.
+              </p>
+            </div>
+            <ContactForm />
+          </div>
         </motion.div>
       </div>
     </section>

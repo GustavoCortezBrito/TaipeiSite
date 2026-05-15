@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
 import { MapPin, Clock, Phone, Mail, Navigation, Car } from "lucide-react";
+import Image from "next/image";
 
 export default function RestauranteEmCacupe() {
   return (
@@ -12,9 +13,21 @@ export default function RestauranteEmCacupe() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="relative min-h-[70vh] bg-gradient-to-br from-taipei-sage via-taipei-beige to-taipei-cream flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/ambiente/vista-mar.jpg"
+              alt="Vista para o mar do restaurante em Cacupé"
+              fill
+              className="object-cover"
+              priority
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-taipei-sage/70 via-taipei-beige/60 to-taipei-cream/70" />
+          </div>
+
           <motion.div
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-20 z-10"
             animate={{
               backgroundPosition: ["0% 0%", "100% 100%"],
             }}
@@ -24,7 +37,7 @@ export default function RestauranteEmCacupe() {
             }}
           />
 
-          <div className="relative text-center px-4 z-10">
+          <div className="relative text-center px-4 z-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,22 +80,14 @@ export default function RestauranteEmCacupe() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-taipei-cream rounded-3xl p-8 h-96 flex items-center justify-center"
+                className="relative h-96 rounded-3xl overflow-hidden shadow-2xl"
               >
-                <div className="text-center">
-                  <MapPin className="text-taipei-red mx-auto mb-4" size={64} />
-                  <h3 className="text-2xl font-serif text-taipei-red mb-4">Endereço</h3>
-                  <p className="text-taipei-brown text-lg mb-2">Cacupé</p>
-                  <p className="text-taipei-brown text-lg mb-6">Florianópolis - SC</p>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-taipei-red text-white px-6 py-3 rounded-full hover:bg-taipei-brown transition-colors inline-flex items-center gap-2"
-                  >
-                    <Navigation size={20} />
-                    Ver no Mapa
-                  </motion.button>
-                </div>
+                <Image
+                  src="/images/ambiente/interior-1.jpg"
+                  alt="Interior do restaurante Taipei Coffee House"
+                  fill
+                  className="object-cover"
+                />
               </motion.div>
             </div>
           </div>
@@ -143,11 +148,37 @@ export default function RestauranteEmCacupe() {
 
         {/* Diferenciais */}
         <AnimatedSection className="py-24 px-4 bg-white">
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-6xl">
             <h2 className="text-4xl font-serif text-taipei-red text-center mb-4">Por Que Visitar?</h2>
-            <div className="w-24 h-1 bg-taipei-red mx-auto mb-16" />
+            <div className="w-24 h-1 bg-taipei-red mx-auto mb-12" />
 
-            <div className="space-y-6">
+            {/* Ambiente Images */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                { src: "/images/ambiente/interior-2.jpg", alt: "Interior do restaurante" },
+                { src: "/images/ambiente/area-externa.jpg", alt: "Área externa" },
+                { src: "/images/hero/hero-panorama.jpg", alt: "Vista panorâmica" },
+              ].map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="relative h-64 rounded-2xl overflow-hidden shadow-lg"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="space-y-6 max-w-4xl mx-auto">
               {[
                 {
                   title: "Vista para o Mar",

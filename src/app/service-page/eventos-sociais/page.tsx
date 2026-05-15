@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { Heart, Cake, PartyPopper, Camera, Music, Sparkles } from "lucide-react";
 
@@ -232,23 +233,31 @@ export default function EventosSociais() {
               Entre em contato e vamos criar uma celebração inesquecível
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <motion.a
+                href="https://wa.me/5548988798141"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors"
               >
                 Solicitar Orçamento
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/taipeicoffeehouse/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
-                Ver Galeria
-              </motion.button>
+                Ver Galeria no Instagram
+              </motion.a>
             </div>
           </div>
         </AnimatedSection>
+
+        <ContactSection />
       </main>
       <Footer />
     </>

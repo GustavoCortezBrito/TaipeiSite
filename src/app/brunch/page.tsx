@@ -3,8 +3,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { Clock, UtensilsCrossed, Coffee, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function Brunch() {
   const highlights = [
@@ -65,9 +67,21 @@ export default function Brunch() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] bg-gradient-to-br from-taipei-cream via-taipei-beige to-secondary flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/brunch/brunch-hero.png"
+              alt="Brunch do Taipei Coffee House em Cacupé"
+              fill
+              className="object-cover"
+              priority
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-taipei-cream/70 via-taipei-beige/60 to-secondary/70" />
+          </div>
+
           <motion.div
-            className="absolute inset-0"
+            className="absolute inset-0 z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.1 }}
             transition={{ duration: 2 }}
@@ -92,7 +106,7 @@ export default function Brunch() {
             />
           </motion.div>
 
-          <div className="relative text-center px-4 z-10">
+          <div className="relative text-center px-4 z-20">
             <motion.h1 
               className="text-6xl md:text-8xl font-serif text-taipei-red mb-6"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -123,6 +137,32 @@ export default function Brunch() {
         {/* Highlights */}
         <section className="py-20 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
+            {/* Brunch Images */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                { src: "/images/brunch/brunch-2.png", alt: "Brunch especial" },
+                { src: "/images/brunch/brunch-mesa.jpg", alt: "Mesa de brunch" },
+                { src: "/images/brunch/brunch-hero.png", alt: "Brunch completo" },
+              ].map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {highlights.map((item, index) => (
                 <motion.div
@@ -199,37 +239,50 @@ export default function Brunch() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl"
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col"
               >
                 <h3 className="text-2xl font-serif mb-4">Ambiente Único</h3>
-                <p className="opacity-90 leading-relaxed">
+                <p className="opacity-90 leading-relaxed mb-6">
                   Desfrute do seu brunch em um ambiente sofisticado e acolhedor, com vista privilegiada 
                   para o mar de Cacupé. O cenário perfeito para começar o dia com tranquilidade.
                 </p>
+                <motion.a
+                  href="/sobre-o-taipei"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-white text-taipei-red px-8 py-3 rounded-full font-semibold hover:bg-taipei-cream transition-colors self-start mt-auto"
+                >
+                  Conheça o Espaço
+                </motion.a>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl"
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col"
               >
                 <h3 className="text-2xl font-serif mb-4">Reservas</h3>
                 <p className="opacity-90 leading-relaxed mb-6">
                   Recomendamos reserva prévia, especialmente aos domingos. Entre em contato pelo 
                   WhatsApp ou Instagram para garantir sua mesa.
                 </p>
-                <motion.button
+                <motion.a
+                  href="https://wa.me/5548988798141"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-taipei-red px-8 py-3 rounded-full font-semibold hover:bg-taipei-cream transition-colors"
+                  className="inline-block bg-white text-taipei-red px-8 py-3 rounded-full font-semibold hover:bg-taipei-cream transition-colors self-start mt-auto"
                 >
                   Fazer Reserva
-                </motion.button>
+                </motion.a>
               </motion.div>
             </div>
           </div>
         </AnimatedSection>
+
+        <ContactSection />
       </main>
       <Footer />
     </>

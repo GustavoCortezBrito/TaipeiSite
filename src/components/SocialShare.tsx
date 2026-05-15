@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Facebook, Twitter, Linkedin, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -21,6 +22,12 @@ export default function SocialShare({
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
     whatsapp: `https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`,
   };
+
+  const [canShare, setCanShare] = useState(false);
+
+  useEffect(() => {
+    setCanShare(typeof navigator !== 'undefined' && typeof navigator.share !== 'undefined');
+  }, []);
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -76,7 +83,7 @@ export default function SocialShare({
           <Linkedin size={18} />
         </motion.a>
 
-        {typeof navigator !== 'undefined' && navigator.share && (
+        {canShare && (
           <motion.button
             onClick={handleShare}
             whileHover={{ scale: 1.1 }}
