@@ -10,31 +10,43 @@ const sections = [
   {
     title: "Da Cultura Taiwanesa para Cacupé",
     paragraphs: [
-      "Criada entre rituais familiares e mercados tradicionais de Taiwan, Daiane aprendeu desde cedo que servir comida é um ato de afeto. Na cultura oriental, hospitalidade não é performance — é presença.",
-      "Anos depois, vivendo em Florianópolis, ela encontrou em Cacupé o cenário perfeito para unir suas raízes asiáticas à paisagem única da Baía Norte. Assim nasceu o Taipei Coffee House: um restaurante em Florianópolis que integra tradição, estética e experiência à beira-mar.",
+      "Criada entre rituais familiares e mercados tradicionais de Taiwan, Daiane aprendeu desde cedo que servir comida é um ato de afeto. Na cultura oriental, hospitalidade não é performance — é presença. Essa presença se manifesta no respeito ao tempo dos ingredientes, na precisão do preparo e na intenção de acolher calorosamente quem cruza as portas de casa.",
+      "Anos depois, vivendo em Florianópolis, ela encontrou em Cacupé o cenário perfeito para unir suas raízes asiáticas à paisagem única da Baía Norte. Assim nasceu o Taipei Coffee House: um restaurante em Florianópolis que integra tradição, estética e experiência à beira-mar, proporcionando um refúgio de paz onde o tempo parece correr mais devagar.",
+      "A essência taiwanesa está presente em cada detalhe, desde o aroma do gengibre fresco e das especiarias tradicionais até o cuidado minucioso na seleção de chás e grãos de café de origem controlada. O Taipei é a realização de um sonho de infância que atravessou oceanos para encontrar lar e encanto na bela Ilha da Magia."
     ],
   },
   {
     title: "Um Restaurante com Influência Asiática",
     paragraphs: [
-      "O Taipei não é apenas um café. É um restaurante contemporâneo que oferece brunch autoral, almoço à beira-mar, jantar com atmosfera intimista e espaço para eventos corporativos e celebrações.",
-      "Nossa gastronomia combina ingredientes selecionados, técnicas orientais e apresentação cuidadosa, sempre com vista privilegiada para o mar em Floripa.",
+      "O Taipei não é apenas um café de passagem. É um restaurante contemporâneo completo que oferece brunch autoral, almoço à beira-mar, jantar com atmosfera intimista e espaço para eventos corporativos e celebrações exclusivas. A nossa proposta culinária é criar pontes entre o Oriente e o Ocidente, misturando sabores tradicionais e técnicas modernas de preparo.",
+      "Nossa gastronomia combina ingredientes selecionados de produtores locais, técnicas orientais milenares e uma apresentação artística e cuidadosa, sempre com vista privilegiada para o mar de Florianópolis. Cada prato conta uma história de fusão cultural, combinando o frescor dos frutos do mar locais com a potência e o perfume das especiarias asiáticas.",
+      "Do clássico brunch servido com pães de fermentação natural aos pratos principais inspirados na rica culinária taiwanesa e chinesa, nossa cozinha preza pelo frescor e pela inovação. Nossos chefs buscam surpreender o paladar através do equilíbrio perfeito entre o doce, o salgado, o ácido e o umami, o quinto sabor básico."
     ],
   },
   {
-    title: "Hospitalidade como Filosofia",
+    title: "Hospitalidade como Filosofia de Vida",
     paragraphs: [
-      "Na cultura chinesa, conceitos como guanxi (conexão) e renqing (reciprocidade) representam a importância das relações humanas. Esses valores guiam o Taipei desde a inauguração.",
-      "Cada detalhe — da escolha da louça ao atendimento — é pensado para que nossos convidados sintam que há um lugar reservado para eles.",
+      "Na cultura chinesa, conceitos como guanxi (conexão profunda) e renqing (reciprocidade, empatia e carinho) representam a importância primordial das relações humanas. Esses valores milenares guiam o Taipei Coffee House desde a sua fundação e estão intimamente refletidos no comportamento de toda a nossa equipe de atendimento.",
+      "Cada detalhe — da escolha da louça de cerâmica feita à mão ao atendimento caloroso e atencioso — é pensado para que nossos convidados sintam que há um lugar reservado especialmente para eles. Acreditamos que a mesa é um espaço sagrado de partilha, conversa e celebração da vida cotidiana.",
+      "Nossos atendentes são treinados para acolher cada cliente com o mesmo sorriso e atenção que receberiam em uma autêntica casa taiwanesa. Queremos que você se sinta genuinamente em casa, seja para passar horas lendo um livro com um bom café especial ou para celebrar uma data importante."
     ],
   },
   {
-    title: "Cacupé: O Lugar Escolhido",
+    title: "Cacupé: O Cenário Perfeito à Beira-Mar",
     paragraphs: [
-      "Entre o mar e a natureza preservada, Cacupé é um dos bairros mais charmosos de Florianópolis. Foi aqui que o Taipei encontrou sua casa.",
-      "Hoje, somos referência para quem busca restaurante em Cacupé com vista para o mar, seja para um brunch de fim de semana, um almoço especial ou um evento à beira-mar.",
+      "Entre o mar calmo e a natureza preservada do norte da ilha, Cacupé é um dos bairros mais tradicionais, calmos e charmosos de Florianópolis. Foi neste cenário bucólico e inspirador que o Taipei encontrou o local ideal para sua existência à beira-mar.",
+      "Hoje, somos referência absoluta para quem busca um restaurante em Cacupé com vista para o mar, seja para um brunch de fim de semana de frente para a baía, um almoço especial de negócios ou um evento memorável. A brisa do mar e o pôr do sol espetacular são companheiros diários da nossa jornada gastronômica.",
+      "A nossa arquitetura foi projetada para emoldurar a paisagem externa, com grandes janelas de vidro e um deck de madeira que permite sentir a proximidade com o oceano. O Cacupé não é apenas nosso endereço comercial, é parte essencial da nossa identidade e da atmosfera de paz que oferecemos."
     ],
   },
+  {
+    title: "O Padrão dos Cafés Especiais",
+    paragraphs: [
+      "Uma das grandes paixões do Taipei é a cultura dos cafés especiais de alta qualidade. Trabalhamos exclusivamente com grãos selecionados, pontuados acima de 85 pontos pela SCAA (Specialty Coffee Association), provenientes de microlotes das melhores regiões produtoras do Brasil.",
+      "Nossos baristas dominam diferentes métodos de extração — como Hario V60, Chemex e Aeropress — extraindo o máximo de doçura, acidez e corpo de cada grão. O ritual de preparo é realizado na frente do cliente, valorizando toda a cadeia produtora, desde o produtor rural até a xícara final.",
+      "Além dos cafés filtrados e do tradicional espresso, oferecemos bebidas autorais criativas que misturam café com especiarias orientais, chás e ingredientes locais, criando experiências sensoriais que surpreendem e encantam os entusiastas da bebida mais amada do país."
+    ],
+  }
 ];
 
 export default function SobreOTaipei() {
@@ -48,7 +60,7 @@ export default function SobreOTaipei() {
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/sobre/historia.jpg"
-              alt="Taipei, Taiwan"
+              alt="Taipei Coffee House - Nossa História e Cultura Taiwanesa"
               fill
               className="object-cover object-[center_30%]"
               priority
@@ -78,12 +90,12 @@ export default function SobreOTaipei() {
               Fundadora Taiwanesa
             </motion.p>
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight max-w-4xl mx-auto"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Sobre Nós
+              História e Essência | Taipei Coffee House
             </motion.h1>
             <motion.p
               className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto"
@@ -111,14 +123,22 @@ export default function SobreOTaipei() {
                 A História do Taipei Coffee House
               </h2>
               <div className="w-24 h-1 bg-taipei-red mx-auto mb-8" />
-              <p className="text-lg md:text-xl text-taipei-brown leading-relaxed mb-4">
-                O Taipei Coffee House é um restaurante com vista para o mar localizado em Cacupé, no norte
-                da ilha de Florianópolis. Mais do que um espaço gastronômico, o Taipei nasceu do encontro
-                entre duas culturas: a tradição taiwanesa e a hospitalidade brasileira.
+              <p className="text-lg md:text-xl text-taipei-brown leading-relaxed mb-4 font-light">
+                O Taipei Coffee House é um restaurante com vista para o mar localizado no bairro de Cacupé, no norte
+                da ilha de Florianópolis. Mais do que um espaço gastronômico convencional, o Taipei nasceu do encontro
+                entre duas culturas distantes geograficamente, mas muito próximas no afeto: a profunda tradição taiwanesa e 
+                a calorosa hospitalidade brasileira. É um refúgio acolhedor onde a pressa é deixada do lado de fora.
               </p>
-              <p className="text-lg md:text-xl text-taipei-brown leading-relaxed">
+              <p className="text-lg md:text-xl text-taipei-brown leading-relaxed mb-4 font-light">
                 Fundado por Daiane Shuai, nascida em Taipei, Taiwan, o restaurante carrega em sua essência
-                o cuidado oriental com os detalhes e o desejo de transformar cada refeição em experiência.
+                o cuidado oriental com a harmonia, o respeito aos ciclos da natureza e o desejo de transformar cada refeição
+                em um momento memorável de conexão. A fundadora trouxe consigo as receitas e as memórias da sua família taiwanesa, 
+                dando vida a um cardápio autoral de fusão único em Santa Catarina.
+              </p>
+              <p className="text-lg md:text-xl text-taipei-brown leading-relaxed font-light">
+                Nossa casa foi desenhada para integrar a deslumbrante vista para a baía de Cacupé com um design minimalista, 
+                aconchegante e repleto de luz natural. Aqui, você pode desfrutar de um brunch completo aos finais de semana, 
+                um almoço com pratos sofisticados durante o dia, ou planejar celebrações inesquecíveis no nosso espaço para eventos.
               </p>
             </motion.div>
           </div>
@@ -129,9 +149,9 @@ export default function SobreOTaipei() {
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-3 gap-4 md:gap-6">
               {[
-                { src: "/images/sobre/fundadora.jpg", alt: "Daiane Shuai — fundadora" },
-                { src: "/images/sobre/daiane-jornal.png", alt: "Daiane com o jornal do Taipei" },
-                { src: "/images/sobre/daiane-familia.png", alt: "Daiane na infância em Taiwan" },
+                { src: "/images/sobre/fundadora.jpg", alt: "Daiane Shuai — fundadora do Taipei Coffee House" },
+                { src: "/images/sobre/daiane-jornal.png", alt: "Daiane Shuai com o jornal do Taipei" },
+                { src: "/images/sobre/daiane-familia.png", alt: "Daiane na infância com a família em Taiwan" },
               ].map((img, i) => (
                 <motion.div
                   key={i}
@@ -166,7 +186,7 @@ export default function SobreOTaipei() {
                 <h3 className="text-2xl md:text-3xl font-serif text-taipei-red mb-5 pl-4">{s.title}</h3>
                 <div className="space-y-3 pl-4">
                   {s.paragraphs.map((p, j) => (
-                    <p key={j} className="text-taipei-brown leading-relaxed text-lg">{p}</p>
+                    <p key={j} className="text-taipei-brown leading-relaxed text-lg font-light">{p}</p>
                   ))}
                 </div>
               </motion.div>
@@ -208,7 +228,7 @@ export default function SobreOTaipei() {
               whileTap={{ scale: 0.95 }}
               className="inline-block mt-10 bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors shadow-lg"
             >
-              Fazer uma Reserva
+              Reservar Mesa no Taipei Coffee House
             </motion.a>
           </div>
         </section>
