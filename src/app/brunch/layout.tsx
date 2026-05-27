@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Brunch Taipei Coffee House | Brunch em Florianópolis com Vista Mar",
   description: "Brunch especial aos finais de semana em Florianópolis. Pratos autorais, cafés especiais e vista para o mar em Cacupé. Reserve sua mesa!",
   keywords: ["brunch florianópolis", "brunch cacupé", "brunch fim de semana", "café da manhã florianópolis", "brunch vista mar"],
+  alternates: {
+    canonical: "https://www.taipeicoffeehouse.com.br/brunch",
+  },
   openGraph: {
     title: "Brunch Taipei Coffee House | Brunch em Florianópolis",
     description: "Brunch especial aos finais de semana com pratos autorais e vista para o mar.",

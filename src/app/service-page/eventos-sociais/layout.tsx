@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Eventos Sociais em Florianópolis | Taipei Coffee House",
   description: "Espaço para eventos sociais em Florianópolis. Aniversários, formaturas, casamentos, chás de bebê e celebrações especiais com vista para o mar em Cacupé.",
   keywords: ["eventos sociais florianópolis", "aniversários florianópolis", "formaturas cacupé", "festas florianópolis", "celebrações vista mar"],
+  alternates: {
+    canonical: "https://www.taipeicoffeehouse.com.br/service-page/eventos-sociais",
+  },
   openGraph: {
     title: "Eventos Sociais | Taipei Coffee House",
     description: "Espaço para eventos sociais e celebrações especiais em Florianópolis.",

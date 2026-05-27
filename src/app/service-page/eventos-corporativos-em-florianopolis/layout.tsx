@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Eventos Corporativos em Florianópolis | Taipei Coffee House",
   description: "Espaço para eventos corporativos em Florianópolis. Reuniões, workshops, treinamentos e confraternizações com estrutura completa e vista para o mar.",
   keywords: ["eventos corporativos florianópolis", "reuniões empresariais", "workshops florianópolis", "espaço corporativo cacupé", "eventos empresariais"],
+  alternates: {
+    canonical: "https://www.taipeicoffeehouse.com.br/service-page/eventos-corporativos-em-florianopolis",
+  },
   openGraph: {
     title: "Eventos Corporativos | Taipei Coffee House",
     description: "Espaço completo para eventos corporativos em Florianópolis.",

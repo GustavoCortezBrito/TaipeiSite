@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Menu Taipei Coffee House | Cafés, Brunch e Pratos Especiais",
   description: "Descubra nosso menu com cafés especiais, brunch, sanduíches gourmet, doces artesanais e pratos com influência asiática em Florianópolis.",
   keywords: ["menu taipei", "cardápio florianópolis", "cafés especiais", "brunch menu", "comida asiática florianópolis"],
+  alternates: {
+    canonical: "https://www.taipeicoffeehouse.com.br/menu",
+  },
   openGraph: {
     title: "Menu Taipei Coffee House | Cafés, Brunch e Pratos Especiais",
     description: "Descubra nosso menu com cafés especiais, brunch, sanduíches gourmet e pratos autorais.",

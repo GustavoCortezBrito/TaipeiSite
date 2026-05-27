@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Taipei Coffee House" }],
   creator: "Taipei Coffee House",
   publisher: "Taipei Coffee House",
+  alternates: {
+    canonical: "https://www.taipeicoffeehouse.com.br",
+  },
   robots: {
     index: true,
     follow: true,
@@ -23,6 +26,20 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://www.taipeicoffeehouse.com.br",
     siteName: "Taipei Coffee House",
+    images: [
+      {
+        url: "https://www.taipeicoffeehouse.com.br/images/hero/hero-main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Taipei Coffee House - Cacupé, Florianópolis",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Taipei Coffee House | Café e Brunch em Cacupé - Florianópolis",
+    description: "Café e restaurante em Florianópolis com vista para o mar. Brunch, almoço e cafés especiais em Cacupé.",
+    images: ["https://www.taipeicoffeehouse.com.br/images/hero/hero-main.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -38,7 +55,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="canonical" href="https://www.taipeicoffeehouse.com.br" />
         <meta name="theme-color" content="#A84544" />
         <meta name="format-detection" content="telephone=yes" />
         <meta name="geo.region" content="BR-SC" />
