@@ -22,7 +22,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="font-serif text-2xl mb-4 text-white">Taipei Coffee House</h3>
+            <p className="font-serif text-2xl mb-4 text-white font-bold">Taipei Coffee House</p>
             <p className="text-sm text-taipei-beige leading-relaxed mb-4">
               Café cosmopolita em Cacupé, Florianópolis, com vista para o mar.
             </p>
@@ -67,7 +67,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="font-serif text-lg mb-4 text-white">Links Rápidos</h4>
+            <p className="font-serif text-lg mb-4 text-white font-bold">Links Rápidos</p>
             <ul className="space-y-2 text-sm">
               {[
                 { href: "/sobre-o-taipei", label: "Sobre Nós" },
@@ -93,7 +93,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-serif text-lg mb-4 text-white">Serviços</h4>
+            <p className="font-serif text-lg mb-4 text-white font-bold">Serviços</p>
             <ul className="space-y-2 text-sm">
               {[
                 { href: "/service-page/eventos-corporativos-em-florianopolis", label: "Eventos Corporativos" },
@@ -117,7 +117,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="font-serif text-lg mb-4 text-white">Contato</h4>
+            <p className="font-serif text-lg mb-4 text-white font-bold">Contato</p>
             <ul className="space-y-3 text-sm text-taipei-beige">
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="flex-shrink-0 mt-0.5 text-white" />

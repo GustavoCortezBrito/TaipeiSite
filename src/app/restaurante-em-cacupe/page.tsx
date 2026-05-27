@@ -52,16 +52,23 @@ export default function RestauranteEmCacupe() {
               Restaurante em Cacupé com Vista para o Mar
             </h2>
             <div className="w-24 h-1 bg-taipei-red mx-auto mb-10" />
-            <div className="space-y-6 text-lg md:text-xl text-taipei-brown leading-relaxed max-w-3xl mx-auto">
+            <div className="space-y-6 text-lg md:text-xl text-taipei-brown leading-relaxed max-w-3xl mx-auto font-light">
               <p>
-                Se você procura restaurante em Cacupé, no norte da ilha de Florianópolis, o Taipei Coffee
-                House é o cenário ideal para uma experiência gastronômica à beira-mar. Unimos brunch
-                autoral, almoço contemporâneo e jantar com influência asiática em um ambiente sofisticado,
-                com vista privilegiada para o mar em Floripa.
+                Se você procura um autêntico restaurante em Cacupé, localizado no norte da ilha de Florianópolis, o Taipei Coffee
+                House é o cenário ideal para uma experiência gastronômica inesquecível à beira-mar. Nós unimos um brunch
+                autoral sofisticado, um almoço contemporâneo delicioso e pratos inspirados na culinária taiwanesa em um ambiente acolhedor,
+                com vista panorâmica e privilegiada para o mar calmo de Cacupé.
               </p>
               <p>
-                Localizado em um dos bairros mais charmosos e valorizados de Florianópolis, o Taipei oferece
-                muito mais que uma refeição — oferece presença, atmosfera e sabor em cada detalhe.
+                Localizado em um dos bairros mais charmosos, calmos e valorizados da capital catarinense, o Taipei oferece
+                muito mais que uma simples refeição rápida. Nós oferecemos um espaço de presença e afeto, onde cada detalhe —
+                desde a escolha cuidadosa dos ingredientes locais até a hospitalidade calorosa — é planejado para que você e sua
+                família desfrutem do melhor da gastronomia à beira-mar.
+              </p>
+              <p>
+                A nossa essência une o respeito oriental pelo tempo de preparo de cada prato com o frescor dos insumos brasileiros. 
+                Queremos proporcionar a você um refúgio de tranquilidade onde o mar de Florianópolis serve de moldura para grandes conversas, 
+                momentos de lazer ou comemorações especiais com quem você mais ama.
               </p>
             </div>
           </div>
@@ -81,19 +88,19 @@ export default function RestauranteEmCacupe() {
               >
                 <Image
                   src="/images/ambiente/almoco-pessoas.png"
-                  alt="O dia ganha outro sabor no Taipei"
+                  alt="Clientes aproveitando o almoço no restaurante em Cacupé"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-taipei-brown/85 via-taipei-brown/30 to-transparent" />
                 <div className="absolute bottom-10 left-8 right-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-serif tracking-wide leading-tight drop-shadow-md">
+                  <p className="text-3xl md:text-4xl font-bold font-serif tracking-wide leading-tight drop-shadow-md">
                     O DIA GANHA
                     <br />
                     OUTRO SABOR
                     <br />
                     NO TAIPEI
-                  </h3>
+                  </p>
                 </div>
               </motion.div>
 
@@ -109,15 +116,20 @@ export default function RestauranteEmCacupe() {
                   Onde Comer em Cacupé, Florianópolis
                 </h2>
                 <div className="w-20 h-1 bg-taipei-red" />
-                <p className="text-lg text-taipei-brown leading-relaxed">
-                  Cacupé é conhecido pela tranquilidade, natureza preservada e vista deslumbrante da Ponte
-                  Hercílio Luz. Para quem busca onde comer em Cacupé com qualidade e sofisticação, o Taipei
-                  Coffee House se destaca como restaurante contemporâneo que une gastronomia criativa e
-                  localização privilegiada.
+                <p className="text-lg text-taipei-brown leading-relaxed font-light">
+                  O bairro de Cacupé é amplamente conhecido por sua tranquilidade bucólica, natureza preservada e uma vista deslumbrante 
+                  para a Baía Norte de Florianópolis. Para quem busca onde comer em Cacupé com alta qualidade, sofisticação e atendimento acolhedor, 
+                  o Taipei Coffee House se destaca como um restaurante contemporâneo que une técnicas modernas, sabores criativos e uma localização 
+                  privilegiada de fácil acesso.
                 </p>
-                <p className="text-lg text-taipei-brown leading-relaxed">
-                  Seja para um almoço leve, um brunch no fim de semana ou um jantar ao pôr do sol, somos uma
-                  referência gastronômica no bairro.
+                <p className="text-lg text-taipei-brown leading-relaxed font-light">
+                  Nossa cozinha combina pratos clássicos com um toque de influência asiática, como o nosso famoso Bão artesanal e pratos autorais 
+                  que misturam a leveza do mar com o aroma marcante das especiarias orientais. Seja para um almoço executivo durante a semana, 
+                  um café especial no meio da tarde ou um encontro romântico ao pôr do sol, o Taipei oferece a atmosfera perfeita para qualquer momento.
+                </p>
+                <p className="text-lg text-taipei-brown leading-relaxed font-light">
+                  A nossa proximidade com o mar permite que nossos clientes desfrutem de um ambiente fresco e arejado, ideal para relaxar enquanto 
+                  saboreiam uma boa refeição acompanhada de nossa carta de bebidas, chás especiais e vinhos selecionados para harmonização.
                 </p>
               </motion.div>
             </div>
@@ -140,24 +152,30 @@ export default function RestauranteEmCacupe() {
                   Brunch e Almoço em Cacupé
                 </h2>
                 <div className="w-20 h-1 bg-taipei-red" />
-                <p className="text-lg text-taipei-brown leading-relaxed">
-                  Nosso brunch em Cacupé combina café especial, pratos autorais e toque oriental em receitas
-                  que surpreendem. Já no almoço, oferecemos opções contemporâneas com ingredientes
-                  selecionados e apresentação elegante.
+                <p className="text-lg text-taipei-brown leading-relaxed font-light">
+                  Nosso brunch em Cacupé é servido de forma especial, combinando pães artesanais de fermentação natural, ovos perfeitamente preparados, 
+                  geleias caseiras, frutas da estação e, claro, nossos premiados cafés especiais. Cada elemento do brunch é planejado para trazer equilíbrio 
+                  entre sabores doces e salgados com um toque oriental marcante.
+                </p>
+                <p className="text-lg text-taipei-brown leading-relaxed font-light">
+                  No almoço, o cardápio do Taipei se expande com opções de pratos principais individuais que valorizam peixes frescos da região, 
+                  carnes grelhadas com molhos autorais e saladas refrescantes. Nossa proposta é oferecer uma alimentação equilibrada, leve e extremamente saborosa, 
+                  perfeita para quem busca comer bem sem pressa durante a semana ou aos sábados e domingos.
                 </p>
 
                 <div className="space-y-4 pt-2">
-                  <h4 className="text-xl font-serif text-taipei-brown font-semibold">
+                  <p className="text-xl font-serif text-taipei-brown font-semibold">
                     O Taipei é ideal para quem procura:
-                  </h4>
+                  </p>
                   <ul className="grid grid-cols-1 gap-3">
                     {[
-                      "Brunch em Cacupé",
-                      "Almoço com vista para o mar",
-                      "Restaurante sofisticado em Floripa",
-                      "Experiência gastronômica no norte da ilha"
+                      "Brunch premium aos finais de semana",
+                      "Almoço contemporâneo com vista para o mar",
+                      "Cafés especiais pontuados de microlotes selecionados",
+                      "Espaço acolhedor e seguro para crianças e famílias",
+                      "Ambiente externo pet friendly para curtir com seu pet"
                     ].map((item, index) => (
-                      <li key={index} className="flex items-center gap-3 text-taipei-brown text-lg">
+                      <li key={index} className="flex items-center gap-3 text-taipei-brown text-lg font-light">
                         <span className="text-taipei-red font-bold text-xl">✓</span>
                         {item}
                       </li>
@@ -176,13 +194,10 @@ export default function RestauranteEmCacupe() {
               >
                 <Image
                   src="/images/ambiente/almoco-pratos.png"
-                  alt="Brunch e Almoço em Cacupé no Taipei"
+                  alt="Pratos gourmet servidos no almoço do Taipei Coffee House"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:bg-white transition-colors">
-                  <span className="text-taipei-brown text-xl font-bold">→</span>
-                </div>
               </motion.div>
             </div>
           </div>
@@ -195,24 +210,25 @@ export default function RestauranteEmCacupe() {
               Restaurante em Cacupé para Momentos Especiais
             </h2>
             <div className="w-24 h-1 bg-taipei-red mx-auto mb-10" />
-            <div className="space-y-6 text-lg md:text-xl text-taipei-brown leading-relaxed max-w-3xl mx-auto">
+            <div className="space-y-6 text-lg md:text-xl text-taipei-brown leading-relaxed max-w-3xl mx-auto font-light">
               <p>
-                Um dos grandes diferenciais do nosso restaurante em Cacupé é a vista aberta para o mar. O
-                ambiente integra arquitetura acolhedora com paisagem natural, criando um espaço perfeito
-                para encontros especiais, celebrações e momentos de pausa. Aqui, cada refeição acontece
-                com o mar como cenário.
+                Um dos maiores atrativos do nosso restaurante em Cacupé é o design arquitetônico que valoriza a integração com a natureza local. 
+                Os amplos janelões de vidro permitem que a luz natural inunde o salão interno, enquanto o deck de madeira externo coloca você em 
+                contato direto com a brisa suave do oceano e o visual inesquecível da orla marítima.
               </p>
               <p>
-                Além do brunch e almoço, o Taipei Coffee House também é escolhido para encontros românticos,
-                confraternizações e eventos intimistas em Florianópolis. Se você procura restaurante em
-                Cacupé com vista para o mar em Floripa, venha conhecer o Taipei e descubra uma experiência
-                que vai além do café.
+                Pensando no conforto de toda a família, o Taipei Coffee House conta com um **Espaço Kids totalmente equipado e seguro**, 
+                permitindo que os pais relaxem e aproveitem a refeição enquanto os filhos se divertem no playground. Além disso, somos orgulhosamente 
+                **Pet Friendly**, o que significa que seu animal de estimação é super bem-vindo em nosso deck externo para compartilhar esses momentos felizes com você.
+              </p>
+              <p>
+                Seja para celebrar aniversários, formaturas, mini-weddings ou para organizar encontros corporativos sofisticados em Florianópolis, 
+                nossa equipe de eventos está pronta para desenhar cardápios personalizados e garantir uma comemoração memorável. Venha nos visitar 
+                e vivencie o estilo de vida tranquilo e saboroso de Cacupé.
               </p>
             </div>
           </div>
         </AnimatedSection>
-
-
 
         {/* FAQ Section */}
         <FAQ />

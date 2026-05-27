@@ -172,9 +172,9 @@ export default function Testimonials() {
               {/* Sub-ratings (only Luiza has them) */}
               {r.ratings && (
                 <div className="flex gap-4 text-xs text-gray-500 border-t border-gray-100 pt-3">
-                  <span>Comida: <strong className="text-gray-700">{r.ratings.comida}/5</strong></span>
-                  <span>Serviço: <strong className="text-gray-700">{r.ratings.servico}/5</strong></span>
-                  <span>Ambiente: <strong className="text-gray-700">{r.ratings.ambiente}/5</strong></span>
+                  <span>Comida: <span className="font-semibold text-gray-700">{r.ratings.comida}/5</span></span>
+                  <span>Serviço: <span className="font-semibold text-gray-700">{r.ratings.servico}/5</span></span>
+                  <span>Ambiente: <span className="font-semibold text-gray-700">{r.ratings.ambiente}/5</span></span>
                 </div>
               )}
             </motion.div>

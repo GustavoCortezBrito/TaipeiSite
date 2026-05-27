@@ -128,7 +128,7 @@ function LocationCard() {
       <div className="p-6">
         <div className="flex items-center gap-2 mb-4">
           <MapPin size={20} className="text-taipei-red" />
-          <h3 className="text-taipei-red font-serif text-xl">Localização</h3>
+          <p className="text-taipei-red font-serif text-xl font-semibold">Localização</p>
         </div>
         <div className="text-taipei-brown text-sm space-y-1 leading-relaxed">
           <p>Estrada Haroldo Soares Glavan, 3010</p>
@@ -184,7 +184,7 @@ function LocationCard() {
           className="flex items-center justify-center gap-2 bg-taipei-red hover:bg-taipei-brown text-white font-semibold py-3 rounded-xl transition-colors"
         >
           <MapPin size={18} />
-          Ver no Google Maps
+          Ver Localização no Google Maps
         </a>
         <a
           href={directionsUrl}
@@ -193,7 +193,7 @@ function LocationCard() {
           className="flex items-center justify-center gap-2 bg-taipei-cream hover:bg-taipei-beige/50 text-taipei-brown font-semibold py-3 rounded-xl transition-colors border border-taipei-beige"
         >
           <Navigation size={18} />
-          Como Chegar
+          Rotas de Como Chegar
         </a>
       </div>
     </div>
@@ -230,7 +230,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl p-8 border border-taipei-beige/40 shadow-sm flex flex-col"
           >
-            <h3 className="text-2xl font-serif text-taipei-red mb-6">Envie uma mensagem</h3>
+            <p className="text-2xl font-serif text-taipei-red mb-6 font-semibold">Envie uma mensagem</p>
             <div className="flex-1">
               <ContactForm />
             </div>

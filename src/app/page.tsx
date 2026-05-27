@@ -91,7 +91,7 @@ export default function Home() {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                 <UtensilsCrossed size={20} />
-                Ver Menu
+                Conhecer Nosso Cardápio
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
@@ -100,7 +100,7 @@ export default function Home() {
               >
                 <span className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 -z-10" />
                 <Calendar size={20} />
-                Nossos Eventos
+                Explorar Nossos Eventos
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -138,7 +138,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     className="bg-taipei-cream p-6 rounded-2xl border-l-4 border-taipei-red shadow-sm"
                   >
-                    <h3 className="text-xl font-serif text-taipei-red mb-3 font-semibold">Nossa Essência</h3>
+                    <p className="text-xl font-serif text-taipei-red mb-3 font-semibold">Nossa Essência</p>
                     <p className="text-base leading-relaxed">
                       Combinamos gastronomia autoral com influência asiática, cafés especiais selecionados e um ambiente 
                       sofisticado com vista privilegiada para o mar. Cada detalhe foi pensado para proporcionar uma 
@@ -152,7 +152,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     className="bg-taipei-cream p-6 rounded-2xl border-l-4 border-taipei-sage shadow-sm"
                   >
-                    <h3 className="text-xl font-serif text-taipei-red mb-3 font-semibold">Localização Privilegiada</h3>
+                    <p className="text-xl font-serif text-taipei-red mb-3 font-semibold">Localização Privilegiada</p>
                     <p className="text-base leading-relaxed">
                       Em Cacupé, oferecemos não apenas uma refeição, mas uma experiência completa. Nossa vista para o mar 
                       de Florianópolis cria o cenário perfeito para brunches relaxantes, almoços especiais, encontros de 
@@ -284,7 +284,7 @@ export default function Home() {
                   <div className="bg-gradient-to-br from-taipei-cream to-taipei-beige w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300 relative z-10">
                     <item.icon className="text-taipei-red" size={32} />
                   </div>
-                  <h3 className="text-2xl font-serif text-taipei-red mb-4 text-center">{item.title}</h3>
+                  <p className="text-2xl font-serif text-taipei-red mb-4 text-center font-bold">{item.title}</p>
                   <p className="text-taipei-brown text-center leading-relaxed">
                     {item.description}
                   </p>
@@ -371,9 +371,9 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-taipei-brown/95 via-taipei-brown/40 to-transparent group-hover:via-taipei-brown/50 transition-all duration-300" />
                   
                   <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-10 text-white">
-                    <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 leading-tight">
+                    <p className="text-2xl md:text-3xl font-serif text-white mb-2 leading-tight font-bold">
                       {item.title}
-                    </h3>
+                    </p>
                     <p className="text-taipei-cream text-sm md:text-base mb-6 font-light max-w-xl opacity-90 leading-relaxed">
                       {item.desc}
                     </p>
@@ -471,7 +471,7 @@ export default function Home() {
                         <div className="bg-white/20 p-4 rounded-full mb-4">
                           <item.icon size={32} />
                         </div>
-                        <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+                        <p className="text-xl font-serif mb-2 font-semibold">{item.title}</p>
                         <p className="text-lg font-medium mb-1">{item.info}</p>
                         <p className="text-sm opacity-80">{item.subinfo}</p>
                       </div>
@@ -481,7 +481,7 @@ export default function Home() {
                       <div className="bg-white/20 p-4 rounded-full mb-4">
                         <item.icon size={32} />
                       </div>
-                      <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+                      <p className="text-xl font-serif mb-2 font-semibold">{item.title}</p>
                       <p className="text-lg font-medium mb-1">{item.info}</p>
                       <p className="text-sm opacity-80">{item.subinfo}</p>
                     </div>
@@ -506,7 +506,7 @@ export default function Home() {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-taipei-red/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   <Phone size={20} />
-                  Fazer Reserva
+                  Fazer Reserva via WhatsApp
                 </a>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -515,7 +515,7 @@ export default function Home() {
                   className="group border-2 border-white text-white px-10 py-4 rounded-full hover:bg-white hover:text-taipei-red transition-all hover:shadow-2xl inline-flex items-center gap-2 font-semibold relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 -z-10" />
-                  Conheça Nossa História
+                  Conhecer Nossa História Completa
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
