@@ -65,13 +65,13 @@ export default function EspacoEventos() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/eventos/bar-eventos.jpg"
               alt="Espaço para eventos no Taipei Coffee House"
               fill
-              className="object-cover"
+              className="object-cover object-[center_35%]"
               priority
               quality={90}
             />
@@ -256,7 +256,7 @@ export default function EspacoEventos() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://wa.me/5548988798141"
+                href="https://wa.me/5548985008964"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

@@ -1,13 +1,13 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ContactSection from "@/components/ContactSection";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { Leaf, Sandwich, UtensilsCrossed, Coffee, Salad, ShoppingBag, Beer, Wine, Droplets, Cookie, Soup, Croissant } from "lucide-react";
+import { Leaf, Sandwich, UtensilsCrossed, Coffee, Salad, ShoppingBag, Beer, Wine, Droplets, Cookie, Soup, Croissant, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface MenuItem {
   name: string;
@@ -251,7 +251,7 @@ const menuData: MenuCategory[] = [
         items: [
           { name: "Taipei Especial - 82-83 pt (SCAA)", description: "Cafe suave e equilibrado, com notas de baunilha, chocolate ao leite e malte.", price: "R$ 15" },
           { name: "Microlotes - TAIPEI ESSENCE 85-86 pt", description: "Notas de caldo de cana e amendoado, com acidez leve e corpo suave.", price: "R$ 17" },
-          { name: "Microlotes - TAIPEI AUDAZ 87+ pt", description: "Frutas amarelas e especiarias, com sabor marcante e corpo forte.", price: "R$ 17" },
+          { name: "Microlotes - TAIPEI AUDAZ 87+ pt", description: "Frutas amarelas e especiarias, com sabor marcante e corpo forte.", price: "R$ 19" },
         ],
       },
     ],
@@ -342,27 +342,36 @@ function MenuItemRow({ item }: { item: MenuItem }) {
   const hasMultiPrice = item.price && typeof item.price === "object";
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.3 }}
-      className="flex gap-4 py-4 border-b border-taipei-beige/40 last:border-0"
+      transition={{ duration: 0.4 }}
+      className="py-4 group border-b border-dashed border-taipei-beige/40 last:border-0"
     >
-      <div className="flex-1 min-w-0">
-        <div className="flex items-start justify-between gap-2">
-          <h4 className="font-semibold text-taipei-brown leading-snug">{item.name}</h4>
+      <div className="flex flex-col gap-1.5">
+        <div className="flex items-baseline justify-between gap-2">
+          <h4 className="font-serif text-lg font-bold text-taipei-brown group-hover:text-taipei-red transition-colors duration-300">
+            {item.name}
+          </h4>
+          {!hasMultiPrice && (
+            <span className="flex-grow border-b border-dotted border-taipei-brown/20 mx-2 self-end mb-1" />
+          )}
           {!hasMultiPrice && item.price && (
-            <span className="text-taipei-red font-semibold text-sm whitespace-nowrap flex-shrink-0">{item.price as string}</span>
+            <span className="text-taipei-red font-semibold text-base md:text-lg whitespace-nowrap flex-shrink-0">
+              {item.price as string}
+            </span>
           )}
         </div>
         {item.description && (
-          <p className="text-sm text-taipei-brown/70 mt-1 leading-relaxed">{item.description}</p>
+          <p className="text-sm text-taipei-brown/75 leading-relaxed italic pr-4">
+            {item.description}
+          </p>
         )}
         {hasMultiPrice && (
-          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+          <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5">
             {Object.entries(item.price as { [key: string]: string }).map(([k, v]) => (
-              <span key={k} className="text-sm text-taipei-brown/80">
-                <span className="font-medium">{k}</span>{" "}
+              <span key={k} className="text-xs text-taipei-brown/80 bg-taipei-cream px-2 py-0.5 rounded-lg border border-taipei-beige/30">
+                <span className="font-medium text-taipei-brown/70">{k}:</span>{" "}
                 <span className="text-taipei-red font-semibold">{v}</span>
               </span>
             ))}
@@ -376,6 +385,28 @@ function MenuItemRow({ item }: { item: MenuItem }) {
 export default function Menu() {
   const [activeTab, setActiveTab] = useState(menuData[0].id);
   const active = menuData.find((c) => c.id === activeTab)!;
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  const handleScroll = () => {
+    if (tabsRef.current) {
+      if (tabsRef.current.scrollLeft > 20) {
+        setShowScrollIndicator(false);
+      } else {
+        setShowScrollIndicator(true);
+      }
+    }
+  };
+
+  const scrollTabs = (direction: "left" | "right") => {
+    if (tabsRef.current) {
+      const scrollAmount = 300;
+      tabsRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <>
@@ -383,46 +414,98 @@ export default function Menu() {
       <WhatsAppButton />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="relative h-[45vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <Image src="/images/menu/cafe-especial.jpg" alt="Menu Taipei Coffee House" fill className="object-cover" priority quality={90} />
-            <div className="absolute inset-0 bg-gradient-to-br from-taipei-cream/85 via-secondary/75 to-taipei-beige/85" />
+            <Image src="/images/menu/cafe-especial.jpg" alt="Menu Taipei Coffee House" fill className="object-cover object-[center_45%]" priority quality={90} />
+            <div className="absolute inset-0 bg-gradient-to-br from-taipei-brown/80 via-taipei-red/60 to-taipei-brown/80" />
           </div>
           <div className="relative text-center px-4 z-10">
-            <motion.h1 className="text-5xl md:text-7xl font-serif text-taipei-red mb-3" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <motion.h1 className="text-5xl md:text-7xl font-serif text-white mb-3" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               Menu
             </motion.h1>
-            <motion.p className="text-lg text-taipei-brown" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
+            <motion.p className="text-lg text-taipei-cream" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               Servido das tercas aos domingos.
             </motion.p>
           </div>
         </section>
 
-        <section className="py-12 px-4 bg-taipei-cream min-h-screen">
+        <section className="py-16 px-4 bg-taipei-cream min-h-screen">
           <div className="container mx-auto max-w-5xl">
 
-            {/* Grid de categorias */}
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 mb-12">
-              {menuData.map((cat) => {
-                const Icon = cat.icon;
-                const isActive = activeTab === cat.id;
-                return (
-                  <motion.button
-                    key={cat.id}
-                    onClick={() => setActiveTab(cat.id)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`flex flex-col items-center gap-2 p-3 rounded-2xl text-center transition-all ${
-                      isActive
-                        ? "bg-taipei-red text-white shadow-lg"
-                        : "bg-white text-taipei-brown hover:bg-taipei-beige/40 border border-taipei-beige/50 shadow-sm"
-                    }`}
+            {/* Carousel de categorias com scroll horizontal */}
+            <div className="relative mb-12 px-4 md:px-0">
+              {/* Fade gradiente para mobile indicando continuação do scroll */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-taipei-cream to-transparent pointer-events-none z-10 md:hidden" />
+              <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-taipei-cream to-transparent pointer-events-none z-10 md:hidden" />
+
+              {/* Indicador de scroll lateral no mobile */}
+              <AnimatePresence>
+                {showScrollIndicator && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -5 }}
+                    animate={{ 
+                      opacity: [0, 0.9, 0.9, 0],
+                      x: [-4, 6, 6, -4]
+                    }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 z-20 md:hidden bg-taipei-red/90 text-white px-2.5 py-1.5 rounded-full shadow-lg pointer-events-none flex items-center gap-1 border border-white/20"
                   >
-                    <Icon size={22} className={isActive ? "text-white" : "text-taipei-red"} />
-                    <span className="text-xs font-medium leading-tight">{cat.label}</span>
-                  </motion.button>
-                );
-              })}
+                    <span className="text-[10px] font-bold uppercase tracking-wider pl-1">Ver mais</span>
+                    <ChevronRight size={14} className="mr-0.5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Botão esquerdo de rolagem */}
+              <button
+                onClick={() => scrollTabs("left")}
+                className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 bg-white/95 hover:bg-taipei-red hover:text-white text-taipei-red shadow-lg border border-taipei-beige/50 w-10 h-10 rounded-full items-center justify-center transition-all"
+                aria-label="Rolar para esquerda"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              {/* Contêiner de categorias com scroll horizontal */}
+              <div
+                ref={tabsRef}
+                onScroll={handleScroll}
+                className="flex gap-3 overflow-x-auto scroll-smooth py-2 px-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                {menuData.map((cat) => {
+                  const Icon = cat.icon;
+                  const isActive = activeTab === cat.id;
+                  return (
+                    <motion.button
+                      key={cat.id}
+                      onClick={() => setActiveTab(cat.id)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`flex flex-col items-center gap-2 p-3 min-w-[110px] sm:min-w-[115px] md:min-w-[125px] rounded-2xl text-center transition-all flex-shrink-0 ${
+                        isActive
+                          ? "bg-taipei-red text-white shadow-lg"
+                          : "bg-white text-taipei-brown hover:bg-taipei-beige/40 border border-taipei-beige/50 shadow-sm"
+                      }`}
+                    >
+                      <Icon size={22} className={isActive ? "text-white" : "text-taipei-red"} />
+                      <span className="text-xs font-semibold leading-tight">{cat.label}</span>
+                    </motion.button>
+                  );
+                })}
+              </div>
+
+              {/* Botão direito de rolagem */}
+              <button
+                onClick={() => scrollTabs("right")}
+                className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 bg-white/95 hover:bg-taipei-red hover:text-white text-taipei-red shadow-lg border border-taipei-beige/50 w-10 h-10 rounded-full items-center justify-center transition-all"
+                aria-label="Rolar para direita"
+              >
+                <ChevronRight size={20} />
+              </button>
             </div>
 
             {/* Conteudo da categoria ativa */}
@@ -436,12 +519,17 @@ export default function Menu() {
                 className="space-y-8"
               >
                 {active.sections.map((section, si) => (
-                  <div key={si} className="bg-white rounded-2xl shadow-sm border border-taipei-beige/30 overflow-hidden">
-                    <div className="px-6 pt-6 pb-4 border-b border-taipei-beige/30">
-                      <h2 className="text-2xl font-serif text-taipei-red">{section.title}</h2>
-                      {section.subtitle && <p className="text-sm text-taipei-brown/70 mt-1">{section.subtitle}</p>}
+                  <div key={si} className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border border-taipei-beige/30 relative overflow-hidden">
+                    <div className="mb-6 text-center md:text-left">
+                      <h2 className="text-2xl md:text-3xl font-serif text-taipei-red inline-block relative pb-2">
+                        {section.title}
+                        <span className="absolute bottom-0 left-0 md:left-0 right-0 md:right-auto w-16 h-0.5 bg-taipei-red mx-auto md:mx-0" />
+                      </h2>
+                      {section.subtitle && <p className="text-sm md:text-base text-taipei-brown/70 mt-2 italic">{section.subtitle}</p>}
                     </div>
-                    <div className="px-6 pb-2">
+
+                    {/* Grid em duas colunas no desktop */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2">
                       {section.items.map((item, ii) => <MenuItemRow key={ii} item={item} />)}
                     </div>
                   </div>

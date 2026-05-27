@@ -17,7 +17,7 @@ function ContactForm() {
     e.preventDefault();
     setLoading(true);
     const msg = `Olá! Me chamo *${form.name}*.\n📧 E-mail: ${form.email}${form.phone ? `\n📱 Telefone: ${form.phone}` : ""}\n\n${form.message}`;
-    const url = `https://wa.me/5548988798141?text=${encodeURIComponent(msg)}`;
+    const url = `https://wa.me/5548985008964?text=${encodeURIComponent(msg)}`;
     setLoading(false);
     setSubmitted(true);
     setTimeout(() => window.open(url, "_blank"), 800);
@@ -139,13 +139,13 @@ function LocationCard() {
         {/* Info row */}
         <div className="mt-5 grid grid-cols-3 gap-3 text-xs text-taipei-brown">
           <a
-            href="https://wa.me/5548988798141"
+            href="https://wa.me/5548985008964"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-1 bg-taipei-cream hover:bg-taipei-beige/40 rounded-lg p-3 transition-colors"
           >
             <Phone size={14} className="text-taipei-red" />
-            <span className="text-center">(48) 98879-8141</span>
+            <span className="text-center">(48) 98500-8964</span>
           </a>
           <div className="flex flex-col items-center gap-1 bg-taipei-cream rounded-lg p-3">
             <Clock size={14} className="text-taipei-red" />

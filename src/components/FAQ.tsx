@@ -32,7 +32,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Precisa fazer reserva para visitar o Taipei Coffee House?",
-    answer: "Recomendamos reserva para grupos acima de 6 pessoas e para finais de semana. Entre em contato pelo WhatsApp (48) 98879-8141."
+    answer: "Recomendamos reserva para grupos acima de 6 pessoas e para finais de semana. Entre em contato pelo WhatsApp (48) 98500-8964."
   },
   {
     question: "O Taipei Coffee House é um bom lugar para famílias?",

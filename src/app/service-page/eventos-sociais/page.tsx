@@ -10,11 +10,11 @@ import Testimonials from "@/components/Testimonials";
 import Image from "next/image";
 
 const spaceImages = [
-  { src: "/images/espaco-frente-eventos.jpg", alt: "Frente do espaco de eventos" },
+  { src: "/images/eventos/espaco-frente-eventos.jpg", alt: "Frente do espaco de eventos" },
   { src: "/images/eventos/bar-eventos.jpg", alt: "Bar para eventos" },
   { src: "/images/eventos/espaco-2andar.jpg", alt: "Espaco segundo andar" },
-  { src: "/images/pessoas-evento.jpg", alt: "Evento social no Taipei" },
-  { src: "/images/eventos-sociais.png", alt: "Eventos sociais" },
+  { src: "/images/ambiente/area-externa.jpg", alt: "Area externa do espaco de eventos" },
+  { src: "/images/ambiente/vista-mar.jpg", alt: "Vista para o mar de Cacupe" },
   { src: "/images/eventos-edited.jpg", alt: "Espaco de eventos" },
 ];
 
@@ -32,13 +32,13 @@ export default function EventosSociais() {
       <main className="min-h-screen">
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/pessoas-evento.jpg"
               alt="Eventos sociais no Taipei Coffee House"
               fill
-              className="object-cover"
+              className="object-cover object-[center_30%]"
               priority
               quality={90}
             />
@@ -172,7 +172,7 @@ export default function EventosSociais() {
             <h2 className="text-4xl md:text-5xl font-serif mb-6">Vamos Celebrar Juntos?</h2>
             <p className="text-xl mb-10 opacity-90">Entre em contato e vamos criar uma celebracao inesquecivel</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a href="https://wa.me/5548988798141" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors">
+              <motion.a href="https://wa.me/5548985008964" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors">
                 Solicitar Orcamento
               </motion.a>
               <motion.a href="https://www.instagram.com/taipeicoffeehouse/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors">

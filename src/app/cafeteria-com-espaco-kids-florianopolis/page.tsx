@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,12 +6,12 @@ import ContactSection from "@/components/ContactSection";
 import Testimonials from "@/components/Testimonials";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
-import { Baby, Dog, Trees, Coffee, Users, Sun, Shield, Smile } from "lucide-react";
+import { Baby, Dog, Trees, Coffee, Users, Sun, Sparkles, Smile } from "lucide-react";
 import Image from "next/image";
 
 const features = [
   { icon: Baby, title: "Espaco Kids Seguro", description: "Area dedicada onde as criancas podem circular com liberdade e tranquilidade." },
-  { icon: Shield, title: "Ambiente Monitorado", description: "Espaco pensado para a seguranca dos pequenos enquanto os pais relaxam." },
+  { icon: Sparkles, title: "Cantinho de Brincar", description: "Um espaco convidativo e aconchegante repleto de brinquedos que encantam as criancas." },
   { icon: Coffee, title: "Cafe para os Pais", description: "Aproveite nossos cafes especiais e gastronomia autoral com calma." },
   { icon: Dog, title: "Pet Friendly", description: "Seu pet e bem-vindo em nossas areas externas." },
   { icon: Trees, title: "Area Externa", description: "Espaco ao ar livre integrado a natureza de Cacupe." },
@@ -27,13 +27,14 @@ export default function CafeteriaComEspacoKids() {
       <main className="min-h-screen">
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/parquinho-kids-cacupe.jpg"
               alt="Espaco kids do Taipei Coffee House em Cacupe"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 30%" }} // Ajuste preciso para enquadrar as luzes e o topo do parquinho
               priority
               quality={90}
             />
@@ -92,6 +93,7 @@ export default function CafeteriaComEspacoKids() {
                   alt="Parquinho do Taipei Coffee House"
                   fill
                   className="object-cover"
+                  style={{ objectPosition: "center 50%" }} // Ajuste de enquadramento da foto lateral
                 />
               </motion.div>
               <motion.div
@@ -236,7 +238,7 @@ export default function CafeteriaComEspacoKids() {
               tarde e momentos especiais ao por do sol.
             </motion.p>
             <motion.a
-              href="https://wa.me/5548988798141"
+              href="https://wa.me/5548985008964"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}

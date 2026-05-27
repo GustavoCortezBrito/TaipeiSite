@@ -54,6 +54,7 @@ export default function Header() {
     { href: "/sobre-o-taipei", label: "Sobre" },
     { href: "/menu", label: "Menu" },
     { href: "/brunch", label: "Brunch" },
+    { href: "/restaurante-em-cacupe", label: "Restaurante" },
     { href: "/cafeteria-com-espaco-kids-florianopolis", label: "Espaço Kids" },
   ];
 

@@ -5,61 +5,48 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
-import { Clock, UtensilsCrossed, Coffee, Sparkles } from "lucide-react";
+import { Clock, UtensilsCrossed, Coffee, Sparkles, Plus } from "lucide-react";
 import Image from "next/image";
+
+const brunchMain = {
+  name: "Brunch Taipei",
+  price: "R$ 79",
+  description:
+    "Mini croissants puros, mini pão de queijo, fatia de bolo, fatia de pão de campanha, maçã, fatias de mussarela, fatias de presunto, ramekin de manteiga, ramekin de geleia (do nosso empório), suco de laranja, café com leite ou chocolate quente.",
+};
+
+const adicionais = [
+  { name: "Porção de Shitake na Manteiga", price: "R$ 12" },
+  { name: "Iogurte Natural com Granola", price: "R$ 8" },
+  { name: "Ovo Estalado", price: "R$ 7" },
+  { name: "Ovo Pochê ou Cremoso c/ Nata", price: "R$ 7" },
+  { name: "Fatias de Bacon Crocante", price: "R$ 10" },
+  { name: "Pão sem Glúten", price: "R$ 5" },
+  { name: "Pesto de Beterraba", price: "R$ 5" },
+];
 
 export default function Brunch() {
   const highlights = [
     {
       icon: Clock,
       title: "Finais de Semana",
-      description: "Sábados e domingos, das 9h às 15h"
+      description: "Sábado e Domingo — das 10h30 às 12h30",
     },
     {
       icon: UtensilsCrossed,
       title: "Menu Completo",
-      description: "Opções doces e salgadas"
+      description: "Opções doces e salgadas",
     },
     {
       icon: Coffee,
       title: "Cafés Especiais",
-      description: "Harmonização perfeita"
+      description: "Harmonização perfeita",
     },
     {
       icon: Sparkles,
       title: "Vista para o Mar",
-      description: "Ambiente único em Cacupé"
-    }
-  ];
-
-  const menuItems = [
-    {
-      category: "Clássicos",
-      items: [
-        { name: "Ovos Benedict", description: "Ovos pochê, presunto, molho holandês sobre pão inglês" },
-        { name: "Panquecas Americanas", description: "Stack de 3 panquecas com frutas frescas e maple syrup" },
-        { name: "French Toast", description: "Rabanada francesa com frutas caramelizadas" },
-        { name: "Avocado Toast", description: "Abacate, ovo pochê, tomate cereja e rúcula" },
-      ]
+      description: "Ambiente único em Cacupé",
     },
-    {
-      category: "Opções Leves",
-      items: [
-        { name: "Açaí Bowl", description: "Açaí com granola, frutas frescas e mel" },
-        { name: "Iogurte com Granola", description: "Iogurte natural, granola caseira e frutas da estação" },
-        { name: "Salada de Frutas", description: "Mix de frutas tropicais frescas" },
-        { name: "Smoothie Bowl", description: "Bowl de smoothie com toppings variados" },
-      ]
-    },
-    {
-      category: "Salgados",
-      items: [
-        { name: "Tábua de Frios", description: "Seleção de queijos, frios e pães artesanais" },
-        { name: "Croissant Recheado", description: "Croissant com recheios variados" },
-        { name: "Sanduíche Clube", description: "Frango, bacon, alface, tomate e maionese" },
-        { name: "Quiche do Dia", description: "Quiche artesanal com salada verde" },
-      ]
-    }
   ];
 
   return (
@@ -67,17 +54,17 @@ export default function Brunch() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/brunch/brunch-hero.png"
               alt="Brunch do Taipei Coffee House em Cacupé"
               fill
-              className="object-cover"
+              className="object-cover object-[center_45%]"
               priority
               quality={90}
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-taipei-cream/70 via-taipei-beige/60 to-secondary/70" />
+            <div className="absolute inset-0 bg-gradient-to-br from-taipei-brown/80 via-taipei-red/60 to-taipei-brown/80" />
           </div>
 
           <motion.div
@@ -88,43 +75,35 @@ export default function Brunch() {
           >
             <motion.div
               className="absolute top-20 right-20 w-64 h-64 bg-taipei-red rounded-full blur-3xl"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                x: [0, 50, 0],
-                y: [0, 30, 0]
-              }}
+              animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, 30, 0] }}
               transition={{ duration: 8, repeat: Infinity }}
             />
             <motion.div
               className="absolute bottom-20 left-20 w-80 h-80 bg-taipei-sage rounded-full blur-3xl"
-              animate={{ 
-                scale: [1, 1.3, 1],
-                x: [0, -30, 0],
-                y: [0, 50, 0]
-              }}
+              animate={{ scale: [1, 1.3, 1], x: [0, -30, 0], y: [0, 50, 0] }}
               transition={{ duration: 10, repeat: Infinity }}
             />
           </motion.div>
 
           <div className="relative text-center px-4 z-20">
-            <motion.h1 
-              className="text-6xl md:text-8xl font-serif text-taipei-red mb-6"
+            <motion.h1
+              className="text-6xl md:text-8xl font-serif text-white mb-6"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
               Brunch
             </motion.h1>
-            <motion.p 
-              className="text-2xl md:text-3xl text-taipei-brown mb-8"
+            <motion.p
+              className="text-2xl md:text-3xl text-taipei-cream mb-8 font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               O melhor brunch de Florianópolis
             </motion.p>
-            <motion.p 
-              className="text-lg text-taipei-brown/80 max-w-2xl mx-auto"
+            <motion.p
+              className="text-lg text-white/80 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -153,12 +132,7 @@ export default function Brunch() {
                   whileHover={{ scale: 1.05 }}
                   className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
                 >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                  />
+                  <Image src={img.src} alt={img.alt} fill className="object-cover" />
                 </motion.div>
               ))}
             </div>
@@ -185,44 +159,60 @@ export default function Brunch() {
           </div>
         </section>
 
-        {/* Menu */}
+        {/* Cardápio Real */}
         <section className="py-24 px-4 bg-gradient-to-b from-white to-taipei-cream">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto max-w-4xl">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-serif text-taipei-red text-center mb-4">Nosso Menu</h2>
-              <div className="w-24 h-1 bg-taipei-red mx-auto mb-16" />
+              <h2 className="text-4xl md:text-5xl font-serif text-taipei-red text-center mb-2">
+                Brunch Especial Taipei
+              </h2>
+              <p className="text-center text-taipei-brown mb-4">Sábado e Domingo — das 10h30 às 12h30</p>
+              <div className="w-24 h-1 bg-taipei-red mx-auto mb-14" />
             </AnimatedSection>
 
-            <div className="space-y-12">
-              {menuItems.map((section, sectionIndex) => (
-                <motion.div
-                  key={sectionIndex}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: sectionIndex * 0.2 }}
-                  className="bg-white rounded-3xl p-8 shadow-lg"
-                >
-                  <h3 className="text-3xl font-serif text-taipei-red mb-8 text-center">{section.category}</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {section.items.map((item, itemIndex) => (
-                      <motion.div
-                        key={itemIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: itemIndex * 0.1 }}
-                        whileHover={{ x: 10 }}
-                        className="border-l-4 border-taipei-red pl-4 py-2"
-                      >
-                        <h4 className="font-semibold text-lg text-taipei-brown mb-1">{item.name}</h4>
-                        <p className="text-sm text-taipei-brown/70">{item.description}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* Brunch Principal */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl p-8 shadow-lg border border-taipei-beige/30 mb-10"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <h3 className="text-2xl font-serif text-taipei-red">{brunchMain.name}</h3>
+                <span className="text-2xl font-semibold text-taipei-red whitespace-nowrap">{brunchMain.price}</span>
+              </div>
+              <p className="text-taipei-brown/80 leading-relaxed">{brunchMain.description}</p>
+            </motion.div>
+
+            {/* Adicionais */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-3xl p-8 shadow-lg border border-taipei-beige/30"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Plus className="text-taipei-red flex-shrink-0" size={22} />
+                <h3 className="text-2xl font-serif text-taipei-red">Adicionais</h3>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {adicionais.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.06 }}
+                    className="flex items-center justify-between py-3 px-4 rounded-xl bg-taipei-cream hover:bg-taipei-beige/40 transition-colors"
+                  >
+                    <span className="text-taipei-brown font-medium">{item.name}</span>
+                    <span className="text-taipei-red font-semibold text-sm whitespace-nowrap ml-4">{item.price}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -268,7 +258,7 @@ export default function Brunch() {
                   WhatsApp ou Instagram para garantir sua mesa.
                 </p>
                 <motion.a
-                  href="https://wa.me/5548988798141"
+                  href="https://wa.me/5548985008964"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}

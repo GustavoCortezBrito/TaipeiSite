@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,12 +10,12 @@ import Image from "next/image";
 import Testimonials from "@/components/Testimonials";
 
 const spaceImages = [
-  { src: "/images/eventos/bar-eventos.jpg", alt: "Bar para eventos corporativos" },
+  { src: "/images/eventos/espaco-frente-eventos.jpg", alt: "Frente do espaco de eventos" },
   { src: "/images/eventos/espaco-2andar.jpg", alt: "Espaco segundo andar" },
-  { src: "/images/espaco-frente-eventos.jpg", alt: "Frente do espaco" },
-  { src: "/images/bar-eventos-cacupe.jpg", alt: "Bar de eventos" },
-  { src: "/images/eventos-corporativos.png", alt: "Eventos corporativos" },
-  { src: "/images/eventos-edited.jpg", alt: "Espaco de eventos" },
+  { src: "/images/ambiente/area-externa.jpg", alt: "Area externa do espaco de eventos" },
+  { src: "/images/ambiente/vista-mar.jpg", alt: "Vista para o mar de Cacupe" },
+  { src: "/images/eventos-edited.jpg", alt: "Espaco de eventos decorado" },
+  { src: "/images/ambiente/interior-1.jpg", alt: "Interior do espaco de eventos" },
 ];
 
 export default function EventosCorporativos() {
@@ -41,13 +41,13 @@ export default function EventosCorporativos() {
       <main className="min-h-screen">
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/bar-eventos-cacupe.jpg"
+              src="/images/eventos/bar-eventos.jpg"
               alt="Eventos corporativos no Taipei Coffee House"
               fill
-              className="object-cover"
+              className="object-cover object-[center_35%]"
               priority
               quality={90}
             />
@@ -199,7 +199,7 @@ export default function EventosCorporativos() {
             <h2 className="text-4xl md:text-5xl font-serif mb-6">Vamos Planejar Seu Evento?</h2>
             <p className="text-xl mb-10 opacity-90">Entre em contato para receber uma proposta personalizada</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a href="https://wa.me/5548988798141" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors">
+              <motion.a href="https://wa.me/5548985008964" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors">
                 Solicitar Orcamento
               </motion.a>
               <motion.a href="https://www.instagram.com/taipeicoffeehouse/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors">

@@ -1,60 +1,94 @@
-﻿"use client";
+"use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 import Image from "next/image";
 
+interface InstagramPost {
+  id: string | number;
+  image: string;
+  alt: string;
+  link: string;
+}
+
+const STATIC_POSTS: InstagramPost[] = [
+  {
+    id: 1,
+    image: "/images/insta-1.jpeg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 2,
+    image: "/images/insta-2.jpg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 3,
+    image: "/images/insta-3.jpeg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 4,
+    image: "/images/insta-4.jpeg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 5,
+    image: "/images/insta-5.jpg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 6,
+    image: "/images/insta-6.jpg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 7,
+    image: "/images/insta-7.jpg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+  {
+    id: 8,
+    image: "/images/insta-8.jpg",
+    alt: "Taipei Coffee House",
+    link: "https://www.instagram.com/taipeicoffeehouse/"
+  },
+];
+
+// Altere para 'true' quando configurar a API Oficial do Instagram no .env
+const USE_DYNAMIC_FEED = false;
+
 export default function InstagramFeed() {
-  const instagramPosts = [
-    {
-      id: 1,
-      image: "/images/insta-1.jpeg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 2,
-      image: "/images/insta-2.jpg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 3,
-      image: "/images/insta-3.jpeg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 4,
-      image: "/images/insta-4.jpeg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 5,
-      image: "/images/insta-5.jpg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 6,
-      image: "/images/insta-6.jpg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 7,
-      image: "/images/insta-7.jpg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-    {
-      id: 8,
-      image: "/images/insta-8.jpg",
-      alt: "Taipei Coffee House",
-      link: "https://www.instagram.com/taipeicoffeehouse/"
-    },
-  ];
+  const [instagramPosts, setInstagramPosts] = useState<InstagramPost[]>(STATIC_POSTS);
+
+  useEffect(() => {
+    if (!USE_DYNAMIC_FEED) return;
+
+    async function fetchInstagramFeed() {
+      try {
+        const res = await fetch("/api/instagram");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.posts && Array.isArray(data.posts) && data.posts.length > 0) {
+            setInstagramPosts(data.posts);
+          }
+        }
+      } catch (error) {
+        console.warn("Could not load dynamic Instagram feed, using resilient static fallback:", error);
+      }
+    }
+    
+    // Tentamos buscar os posts dinâmicos em tempo real se a flag estiver ativa
+    fetchInstagramFeed();
+  }, []);
 
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-white to-taipei-cream">
@@ -103,6 +137,7 @@ export default function InstagramFeed() {
                 alt={post.alt}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
+                unoptimized={typeof post.id === "string"} // Otimização inteligente: desativa Image Optimization para URLs externas da CDN do Instagram
               />
               {/* Overlay on hover */}
               <div className="absolute inset-0 bg-taipei-red/0 group-hover:bg-taipei-red/30 transition-all duration-300 flex items-center justify-center">

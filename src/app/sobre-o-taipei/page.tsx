@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -44,13 +44,13 @@ export default function SobreOTaipei() {
       <main className="min-h-screen">
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/sobre/historia.jpg"
               alt="Taipei, Taiwan"
               fill
-              className="object-cover"
+              className="object-cover object-[center_30%]"
               priority
               quality={90}
             />
@@ -130,8 +130,8 @@ export default function SobreOTaipei() {
             <div className="grid grid-cols-3 gap-4 md:gap-6">
               {[
                 { src: "/images/sobre/fundadora.jpg", alt: "Daiane Shuai — fundadora" },
-                { src: "/images/daiane-cardapio.jpg", alt: "Daiane com o cardápio" },
-                { src: "/images/daiane-familia.png", alt: "Daiane e família" },
+                { src: "/images/sobre/daiane-jornal.png", alt: "Daiane com o jornal do Taipei" },
+                { src: "/images/sobre/daiane-familia.png", alt: "Daiane na infância em Taiwan" },
               ].map((img, i) => (
                 <motion.div
                   key={i}
@@ -197,7 +197,7 @@ export default function SobreOTaipei() {
               gastronômica que une cultura, sabor e paisagem em Florianópolis.
             </motion.p>
             <motion.a
-              href="https://wa.me/5548988798141"
+              href="https://wa.me/5548985008964"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}

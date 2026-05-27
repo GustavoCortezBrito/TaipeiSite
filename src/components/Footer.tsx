@@ -73,6 +73,7 @@ export default function Footer() {
                 { href: "/sobre-o-taipei", label: "Sobre Nós" },
                 { href: "/menu", label: "Menu" },
                 { href: "/brunch", label: "Brunch" },
+                { href: "/restaurante-em-cacupe", label: "Restaurante em Cacupé" },
                 { href: "/espaco-eventos-florianopolis", label: "Espaço de Eventos" },
               ].map((link, index) => (
                 <motion.li key={link.href} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
@@ -132,12 +133,12 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Phone size={18} className="flex-shrink-0 text-white" />
                 <a
-                  href="https://wa.me/5548988798141"
+                  href="https://wa.me/5548985008964"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  (48) 98879-8141
+                  (48) 98500-8964
                 </a>
               </li>
               <li className="flex items-center gap-2">
