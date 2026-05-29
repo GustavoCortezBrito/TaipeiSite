@@ -10,7 +10,6 @@ import Image from "next/image";
 
 const brunchMain = {
   name: "Brunch Taipei",
-  price: "R$ 79",
   description:
     "Mini croissants puros, mini pão de queijo, fatia de bolo, fatia de pão de campanha, maçã, fatias de mussarela, fatias de presunto, ramekin de manteiga, ramekin de geleia (do nosso empório), suco de laranja, café com leite ou chocolate quente.",
 };
@@ -180,7 +179,6 @@ export default function Brunch() {
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h3 className="text-2xl font-serif text-taipei-red">{brunchMain.name}</h3>
-                <span className="text-2xl font-semibold text-taipei-red whitespace-nowrap">{brunchMain.price}</span>
               </div>
               <p className="text-taipei-brown/80 leading-relaxed">{brunchMain.description}</p>
             </motion.div>

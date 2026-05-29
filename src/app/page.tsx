@@ -24,10 +24,10 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/hero/hero-main.jpg"
-              alt="Taipei Coffee House - Vista para o mar em Cacupé"
+              src="/images/eventos/espaco-frente-eventos.jpg"
+              alt="Lounge de eventos do Taipei"
               fill
-              className="object-cover object-[center_35%]"
+              className="object-cover object-center md:object-[center_35%]"
               priority
               quality={90}
             />
@@ -45,13 +45,13 @@ export default function Home() {
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-taipei-sage rounded-full blur-3xl" />
           </motion.div>
 
-          <div className="container mx-auto px-4 relative z-20 pb-20 text-center">
+          <div className="container mx-auto px-4 relative z-20 pt-16 md:pt-0 pb-20 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -61,7 +61,7 @@ export default function Home() {
               </motion.h1>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl lg:text-3xl text-taipei-cream mb-4 max-w-3xl mx-auto font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function Home() {
               Restaurante e Café em Florianópolis com Vista para o Mar
             </motion.p>
 
-            <motion.p 
+            <motion.p
               className="text-base md:text-lg text-white/80 mb-10 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -79,14 +79,14 @@ export default function Home() {
               Brunch, almoço, cafés especiais e eventos em Cacupé. Uma experiência gastronômica com influência asiática.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Link 
-                href="/menu" 
+              <Link
+                href="/menu"
                 className="group bg-taipei-red text-white px-8 py-4 rounded-full hover:bg-taipei-brown transition-all hover:shadow-2xl inline-flex items-center justify-center gap-2 relative overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -94,8 +94,8 @@ export default function Home() {
                 Conhecer Nosso Cardápio
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link 
-                href="/espaco-eventos-florianopolis" 
+              <Link
+                href="/espaco-eventos-florianopolis"
                 className="group border-2 border-white text-white hover:text-taipei-red px-8 py-4 rounded-full transition-all hover:shadow-2xl inline-flex items-center justify-center gap-2 relative overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 -z-10" />
@@ -121,16 +121,16 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-serif text-taipei-red mb-6">Sobre o Taipei Coffee House</h2>
               <div className="w-24 h-1 bg-taipei-red mx-auto" />
             </motion.div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Text content - left side */}
               <div className="lg:col-span-7 space-y-6 text-lg md:text-xl text-taipei-brown leading-relaxed">
                 <p>
-                  Localizado em Cacupé, um dos bairros mais charmosos de Florianópolis, o Taipei Coffee House é muito mais 
-                  que um simples café ou restaurante. Somos um espaço de experiências, onde cada visita se transforma em 
+                  Localizado em Cacupé, um dos bairros mais charmosos de Florianópolis, o Taipei Coffee House é muito mais
+                  que um simples café ou restaurante. Somos um espaço de experiências, onde cada visita se transforma em
                   um momento especial de conexão, sabor e contemplação.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6 mt-8">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -140,8 +140,8 @@ export default function Home() {
                   >
                     <p className="text-xl font-serif text-taipei-red mb-3 font-semibold">Nossa Essência</p>
                     <p className="text-base leading-relaxed">
-                      Combinamos gastronomia autoral com influência asiática, cafés especiais selecionados e um ambiente 
-                      sofisticado com vista privilegiada para o mar. Cada detalhe foi pensado para proporcionar uma 
+                      Combinamos gastronomia autoral com influência asiática, cafés especiais selecionados e um ambiente
+                      sofisticado com vista privilegiada para o mar. Cada detalhe foi pensado para proporcionar uma
                       experiência sensorial única, onde tradição e contemporaneidade se encontram.
                     </p>
                   </motion.div>
@@ -154,23 +154,23 @@ export default function Home() {
                   >
                     <p className="text-xl font-serif text-taipei-red mb-3 font-semibold">Localização Privilegiada</p>
                     <p className="text-base leading-relaxed">
-                      Em Cacupé, oferecemos não apenas uma refeição, mas uma experiência completa. Nossa vista para o mar 
-                      de Florianópolis cria o cenário perfeito para brunches relaxantes, almoços especiais, encontros de 
+                      Em Cacupé, oferecemos não apenas uma refeição, mas uma experiência completa. Nossa vista para o mar
+                      de Florianópolis cria o cenário perfeito para brunches relaxantes, almoços especiais, encontros de
                       negócios ou celebrações memoráveis com família e amigos.
                     </p>
                   </motion.div>
                 </div>
 
                 <p className="pt-2">
-                  Seja para um café da manhã tranquilo, um brunch de fim de semana, um almoço executivo ou um evento especial, 
-                  o Taipei Coffee House é o destino ideal para quem busca qualidade, acolhimento e uma experiência gastronômica 
-                  diferenciada em Florianópolis. Venha descobrir por que somos referência em cafés especiais e gastronomia 
+                  Seja para um café da manhã tranquilo, um brunch de fim de semana, um almoço executivo ou um evento especial,
+                  o Taipei Coffee House é o destino ideal para quem busca qualidade, acolhimento e uma experiência gastronômica
+                  diferenciada em Florianópolis. Venha descobrir por que somos referência em cafés especiais e gastronomia
                   autoral na região.
                 </p>
               </div>
 
               {/* Visual Collage - right side */}
-              <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex justify-center">
+              <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex flex-col items-center gap-16 justify-center">
                 {/* Background decorative elements */}
                 <div className="absolute -top-6 -left-6 w-32 h-32 bg-taipei-red/5 rounded-3xl -z-10 blur-xl" />
                 <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-taipei-sage/5 rounded-full -z-10 blur-xl" />
@@ -225,6 +225,56 @@ export default function Home() {
                     className="absolute -top-4 -left-4 bg-taipei-red text-white py-2 px-4 rounded-xl shadow-lg z-20 text-xs font-serif italic tracking-wide"
                   >
                     Fundadora Taiwanesa
+                  </motion.div>
+                </div>
+
+                {/* Collage Container: Conexão entre Ilhas */}
+                <div className="relative w-full max-w-[340px] aspect-[4/5] md:max-w-[380px]">
+                  {/* Main Image: Taiwan Island */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="relative w-[85%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+                  >
+                    <Image
+                      src="/images/sobre/taiwan-scenic.png"
+                      alt="Paisagem da Ilha de Taiwan"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-taipei-brown/30 to-transparent" />
+                  </motion.div>
+
+                  {/* Overlapping Image: Cacupé Frente-mar */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 30, y: 30 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    whileHover={{ scale: 1.05, zIndex: 10 }}
+                    className="absolute -bottom-6 -right-4 w-[55%] aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10"
+                  >
+                    <Image
+                      src="/images/sobre/cacupe-front-sea.png"
+                      alt="Taipei Coffee House frente-mar em Cacupé"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-taipei-brown/20 to-transparent" />
+                  </motion.div>
+
+                  {/* Tiny Accent Badge */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="absolute -top-4 -left-4 bg-taipei-red text-white py-2 px-4 rounded-xl shadow-lg z-20 text-xs font-serif italic tracking-wide"
+                  >
+                    Conexão entre Ilhas
                   </motion.div>
                 </div>
               </div>
@@ -324,7 +374,7 @@ export default function Home() {
                   delay: 0
                 },
                 {
-                  src: "/images/menu/cafe-2.jpg",
+                  src: "/images/menu/cafe-graos.png",
                   alt: "Grãos especiais e microlotes de café no Taipei",
                   title: "Grãos Especiais",
                   desc: "Cafés autorais e microlotes selecionados acima de 85 pontos SCAA para paladares refinados.",
@@ -344,8 +394,8 @@ export default function Home() {
                   delay: 0.2
                 },
                 {
-                  src: "/images/eventos/espaco-frente-eventos.jpg",
-                  alt: "Lounge de eventos do Taipei",
+                  src: "/images/hero/hero-main.jpg",
+                  alt: "Taipei Coffee House - Vista para o mar em Cacupé",
                   title: "Eventos Exclusivos",
                   desc: "Celebrações sociais intimistas ou confraternizações corporativas inesquecíveis de frente para o mar.",
                   link: "/espaco-eventos-florianopolis",
@@ -369,7 +419,7 @@ export default function Home() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-taipei-brown/95 via-taipei-brown/40 to-transparent group-hover:via-taipei-brown/50 transition-all duration-300" />
-                  
+
                   <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-10 text-white">
                     <p className="text-2xl md:text-3xl font-serif text-white mb-2 leading-tight font-bold">
                       {item.title}
@@ -377,7 +427,7 @@ export default function Home() {
                     <p className="text-taipei-cream text-sm md:text-base mb-6 font-light max-w-xl opacity-90 leading-relaxed">
                       {item.desc}
                     </p>
-                    
+
                     <div>
                       <Link
                         href={item.link}
@@ -409,7 +459,7 @@ export default function Home() {
           />
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <motion.h2 
+              <motion.h2
                 className="text-4xl md:text-5xl font-serif mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -418,7 +468,7 @@ export default function Home() {
               >
                 Visite-nos em Cacupé
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-xl mb-4 opacity-90"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -490,7 +540,7 @@ export default function Home() {
               ))}
             </div>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -510,7 +560,7 @@ export default function Home() {
                 </a>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
+                <Link
                   href="/sobre-o-taipei"
                   className="group border-2 border-white text-white px-10 py-4 rounded-full hover:bg-white hover:text-taipei-red transition-all hover:shadow-2xl inline-flex items-center gap-2 font-semibold relative overflow-hidden"
                 >

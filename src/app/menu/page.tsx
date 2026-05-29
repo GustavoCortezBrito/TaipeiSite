@@ -75,7 +75,7 @@ const menuData: MenuCategory[] = [
         title: "Brunch Especial Taipei",
         subtitle: "Sabado e Domingo - das 10h30 as 12h30",
         items: [
-          { name: "Brunch Taipei", description: "Mini croissants puros, mini pao de queijo, fatia de bolo, fatia de pao de campanha, maca, fatias de mussarela, fatias de presunto, ramekin de manteiga, ramekin de geleia (do nosso emporio), suco de laranja, cafe com leite ou chocolate quente.", price: "R$ 79" },
+          { name: "Brunch Taipei", description: "Mini croissants puros, mini pao de queijo, fatia de bolo, fatia de pao de campanha, maca, fatias de mussarela, fatias de presunto, ramekin de manteiga, ramekin de geleia (do nosso emporio), suco de laranja, cafe com leite ou chocolate quente." },
         ],
       },
       {
@@ -353,7 +353,7 @@ function MenuItemRow({ item }: { item: MenuItem }) {
           <h4 className="font-serif text-lg font-bold text-taipei-brown group-hover:text-taipei-red transition-colors duration-300">
             {item.name}
           </h4>
-          {!hasMultiPrice && (
+          {!hasMultiPrice && item.price && (
             <span className="flex-grow border-b border-dotted border-taipei-brown/20 mx-2 self-end mb-1" />
           )}
           {!hasMultiPrice && item.price && (

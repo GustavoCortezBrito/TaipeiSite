@@ -34,7 +34,7 @@ export default function CafeteriaComEspacoKids() {
               alt="Espaco kids do Taipei Coffee House em Cacupe"
               fill
               className="object-cover"
-              style={{ objectPosition: "center 30%" }} // Ajuste preciso para enquadrar as luzes e o topo do parquinho
+              style={{ objectPosition: "center 65%" }} // Ajuste preciso para enquadrar mais da parte de baixo do parquinho
               priority
               quality={90}
             />

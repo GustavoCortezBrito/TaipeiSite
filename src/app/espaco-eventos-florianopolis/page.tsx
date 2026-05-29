@@ -128,32 +128,32 @@ export default function EspacoEventos() {
             {/* Eventos Images */}
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
-              >
-                <Image
-                  src="/images/eventos/espaco-2andar.jpg"
-                  alt="Espaço do segundo andar para eventos"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
-              >
-                <Image
-                  src="/images/ambiente/area-externa.jpg"
-                  alt="Área externa para eventos"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+  className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+>
+  <Image
+    src="/images/hero/hero-main.jpg"
+    alt="Decoração de eventos exclusivos com balões de frente para o mar"
+    fill
+    className="object-cover"
+  />
+</motion.div>
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  className="relative h-80 rounded-2xl overflow-hidden shadow-lg"
+>
+  <Image
+    src="/images/eventos/espaco-2andar.jpg"
+    alt="Espaço do segundo andar para eventos"
+    fill
+    className="object-cover"
+  />
+</motion.div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">

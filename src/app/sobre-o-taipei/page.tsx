@@ -62,7 +62,7 @@ export default function SobreOTaipei() {
               src="/images/sobre/historia.jpg"
               alt="Taipei Coffee House - Nossa História e Cultura Taiwanesa"
               fill
-              className="object-cover object-[center_30%]"
+              className="object-cover object-[center_70%]"
               priority
               quality={90}
             />

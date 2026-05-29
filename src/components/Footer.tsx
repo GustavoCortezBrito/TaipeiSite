@@ -48,7 +48,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/company/taipeicoffeehouse"
+                href="https://www.linkedin.com/company/taipei-coffee-house/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
