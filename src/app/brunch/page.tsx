@@ -15,13 +15,13 @@ const brunchMain = {
 };
 
 const adicionais = [
-  { name: "Porção de Shitake na Manteiga", price: "R$ 12" },
-  { name: "Iogurte Natural com Granola", price: "R$ 8" },
-  { name: "Ovo Estalado", price: "R$ 7" },
-  { name: "Ovo Pochê ou Cremoso c/ Nata", price: "R$ 7" },
-  { name: "Fatias de Bacon Crocante", price: "R$ 10" },
-  { name: "Pão sem Glúten", price: "R$ 5" },
-  { name: "Pesto de Beterraba", price: "R$ 5" },
+  { name: "Porção de Shitake na Manteiga" },
+  { name: "Iogurte Natural com Granola" },
+  { name: "Ovo Estalado" },
+  { name: "Ovo Pochê ou Cremoso c/ Nata" },
+  { name: "Fatias de Bacon Crocante" },
+  { name: "Pão sem Glúten" },
+  { name: "Pesto de Beterraba" },
 ];
 
 export default function Brunch() {
@@ -29,7 +29,7 @@ export default function Brunch() {
     {
       icon: Clock,
       title: "Finais de Semana",
-      description: "Sábado e Domingo — das 10h30 às 12h30",
+      description: "Sábado e Domingo — das 10h às 13h",
     },
     {
       icon: UtensilsCrossed,
@@ -165,7 +165,7 @@ export default function Brunch() {
               <h2 className="text-4xl md:text-5xl font-serif text-taipei-red text-center mb-2">
                 Brunch Especial Taipei
               </h2>
-              <p className="text-center text-taipei-brown mb-4">Sábado e Domingo — das 10h30 às 12h30</p>
+              <p className="text-center text-taipei-brown mb-4">Sábado e Domingo — das 10h às 13h</p>
               <div className="w-24 h-1 bg-taipei-red mx-auto mb-14" />
             </AnimatedSection>
 
@@ -203,10 +203,9 @@ export default function Brunch() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.06 }}
-                    className="flex items-center justify-between py-3 px-4 rounded-xl bg-taipei-cream hover:bg-taipei-beige/40 transition-colors"
+                    className="flex items-center py-3 px-4 rounded-xl bg-taipei-cream hover:bg-taipei-beige/40 transition-colors"
                   >
                     <span className="text-taipei-brown font-medium">{item.name}</span>
-                    <span className="text-taipei-red font-semibold text-sm whitespace-nowrap ml-4">{item.price}</span>
                   </motion.div>
                 ))}
               </div>

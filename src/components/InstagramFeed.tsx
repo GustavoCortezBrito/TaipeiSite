@@ -1,95 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
-import Image from "next/image";
-
-interface InstagramPost {
-  id: string | number;
-  image: string;
-  alt: string;
-  link: string;
-}
-
-const STATIC_POSTS: InstagramPost[] = [
-  {
-    id: 1,
-    image: "/images/insta-1.jpeg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 2,
-    image: "/images/insta-2.jpg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 3,
-    image: "/images/insta-3.jpeg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 4,
-    image: "/images/insta-4.jpeg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 5,
-    image: "/images/insta-5.jpg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 6,
-    image: "/images/insta-6.jpg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 7,
-    image: "/images/insta-7.jpg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-  {
-    id: 8,
-    image: "/images/insta-8.jpg",
-    alt: "Taipei Coffee House",
-    link: "https://www.instagram.com/taipeicoffeehouse/"
-  },
-];
-
-// Altere para 'true' quando configurar a API Oficial do Instagram no .env
-const USE_DYNAMIC_FEED = false;
+import Script from "next/script";
 
 export default function InstagramFeed() {
-  const [instagramPosts, setInstagramPosts] = useState<InstagramPost[]>(STATIC_POSTS);
-
-  useEffect(() => {
-    if (!USE_DYNAMIC_FEED) return;
-
-    async function fetchInstagramFeed() {
-      try {
-        const res = await fetch("/api/instagram");
-        if (res.ok) {
-          const data = await res.json();
-          if (data.posts && Array.isArray(data.posts) && data.posts.length > 0) {
-            setInstagramPosts(data.posts);
-          }
-        }
-      } catch (error) {
-        console.warn("Could not load dynamic Instagram feed, using resilient static fallback:", error);
-      }
-    }
-    
-    // Tentamos buscar os posts dinâmicos em tempo real se a flag estiver ativa
-    fetchInstagramFeed();
-  }, []);
-
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-white to-taipei-cream">
       <div className="container mx-auto max-w-7xl">
@@ -103,7 +18,7 @@ export default function InstagramFeed() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Instagram className="text-taipei-red" size={40} />
             <h2 className="text-4xl md:text-5xl font-serif text-taipei-red">
-              Follow us on Instagram
+              Siga-nos no Instagram
             </h2>
           </div>
           <a
@@ -117,38 +32,23 @@ export default function InstagramFeed() {
           <div className="w-24 h-1 bg-taipei-red mx-auto mt-6" />
         </motion.div>
 
-        {/* Instagram Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {instagramPosts.map((post, index) => (
-            <motion.a
-              key={post.id}
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="relative aspect-square rounded-lg overflow-hidden shadow-lg group cursor-pointer"
-            >
-              <Image
-                src={post.image}
-                alt={post.alt}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                unoptimized={typeof post.id === "string"} // Otimização inteligente: desativa Image Optimization para URLs externas da CDN do Instagram
-              />
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-taipei-red/0 group-hover:bg-taipei-red/30 transition-all duration-300 flex items-center justify-center">
-                <Instagram 
-                  className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
-                  size={40} 
-                />
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        {/* Elfsight Instagram Feed Widget */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <Script
+            src="https://static.elfsight.com/platform/platform.js"
+            strategy="lazyOnload"
+          />
+          <div
+            className="elfsight-app-d36d09ec-c135-4d80-b27d-eaf114695b7a"
+            data-elfsight-app-lazy
+          />
+        </motion.div>
 
         {/* CTA */}
         <motion.div
