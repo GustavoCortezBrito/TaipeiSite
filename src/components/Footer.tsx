@@ -22,7 +22,9 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-serif text-2xl mb-4 text-white font-bold">Taipei Coffee House</p>
+            <Link href="/" className="font-serif text-2xl mb-4 text-white font-bold hover:text-taipei-cream transition-colors block">
+              Taipei Coffee House
+            </Link>
             <p className="text-sm text-taipei-beige leading-relaxed mb-4">
               Café cosmopolita em Cacupé, Florianópolis, com vista para o mar.
             </p>
