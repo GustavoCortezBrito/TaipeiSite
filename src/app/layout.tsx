@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ["https://www.taipeicoffeehouse.com.br/images/hero/hero-main.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
 };
