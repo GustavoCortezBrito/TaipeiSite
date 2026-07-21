@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-// ID do Meta Pixel — trocar pelo ID do cliente quando tiver acesso
+// IDs de Rastreamento
 const META_PIXEL_ID = "1004217395784376";
+const GA_TRACKING_ID = "G-6CJ4J83H41";
 
 export const metadata: Metadata = {
   title: "Taipei Coffee House | Café e Brunch em Cacupé - Florianópolis",
@@ -49,6 +50,9 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
+  verification: {
+    google: "google9cd2227f30a2ba37",
+  },
 };
 
 export default function RootLayout({
@@ -67,6 +71,20 @@ export default function RootLayout({
         <meta name="ICBM" content="-27.4817, -48.5208" />
       </head>
       <body className="antialiased">
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `}
+        </Script>
+
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
