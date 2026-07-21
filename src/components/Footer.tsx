@@ -33,6 +33,7 @@ export default function Footer() {
                 href="https://www.instagram.com/taipeicoffeehouse/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Siga o Taipei Coffee House no Instagram"
                 className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -43,6 +44,7 @@ export default function Footer() {
                 href="https://www.facebook.com/taipeicoffeehouse"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visite a página do Taipei Coffee House no Facebook"
                 className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
@@ -53,6 +55,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/taipei-coffee-house/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Conecte-se com o Taipei Coffee House no LinkedIn"
                 className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}

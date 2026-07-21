@@ -16,8 +16,23 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    // Enviar o e-mail via API route com Resend
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+    } catch (error) {
+      console.error("Erro ao enviar e-mail de contato:", error);
+    }
+
     const msg = `Olá! Me chamo *${form.name}*.\n📧 E-mail: ${form.email}${form.phone ? `\n📱 Telefone: ${form.phone}` : ""}\n\n${form.message}`;
     const url = `https://wa.me/5548985008964?text=${encodeURIComponent(msg)}`;
+    
     setLoading(false);
     setSubmitted(true);
     setTimeout(() => window.open(url, "_blank"), 800);

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 import Script from "next/script";
 
+const INSTAGRAM_URL = "https://www.instagram.com/taipeicoffeehouse/";
+
 export default function InstagramFeed() {
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-white to-taipei-cream">
@@ -22,7 +24,7 @@ export default function InstagramFeed() {
             </h2>
           </div>
           <a
-            href="https://www.instagram.com/taipeicoffeehouse/"
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xl text-taipei-brown hover:text-taipei-red transition-colors inline-flex items-center gap-2"
@@ -41,11 +43,11 @@ export default function InstagramFeed() {
           className="mb-8"
         >
           <Script
-            src="https://static.elfsight.com/platform/platform.js"
+            src="https://elfsightcdn.com/platform.js"
             strategy="lazyOnload"
           />
           <div
-            className="elfsight-app-d36d09ec-c135-4d80-b27d-eaf114695b7a"
+            className="elfsight-app-f9de9e0b-2585-4889-b23b-11acc33170a3"
             data-elfsight-app-lazy
           />
         </motion.div>
@@ -61,7 +63,7 @@ export default function InstagramFeed() {
             Descubra nosso menu com brunch, almoço, cafés especiais e pratos autorais com influência asiática em Florianópolis
           </p>
           <motion.a
-            href="https://www.instagram.com/taipeicoffeehouse/"
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
