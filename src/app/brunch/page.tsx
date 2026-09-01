@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactSection from "@/components/ContactSection";
+import TrackingLink from "@/components/TrackingLink";
 import { motion } from "framer-motion";
 import { Clock, UtensilsCrossed, Coffee, Sparkles, Plus } from "lucide-react";
 import Image from "next/image";
@@ -254,16 +255,18 @@ export default function Brunch() {
                   Recomendamos reserva prévia, especialmente aos domingos. Entre em contato pelo 
                   WhatsApp ou Instagram para garantir sua mesa.
                 </p>
-                <motion.a
-                  href="https://wa.me/5548985008964"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-block bg-white text-taipei-red px-8 py-3 rounded-full font-semibold hover:bg-taipei-cream transition-colors self-start mt-auto"
-                >
-                  Fazer Reserva
-                </motion.a>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <TrackingLink
+                    href="https://wa.me/5548985008964"
+                    trackingType="whatsapp"
+                    ctaName="whatsapp_brunch_reserva"
+                    clickLocation="Brunch Page - Reserva Section"
+                    target="_blank"
+                    className="inline-block bg-white text-taipei-red px-8 py-3 rounded-full font-semibold hover:bg-taipei-cream transition-colors"
+                  >
+                    Fazer Reserva
+                  </TrackingLink>
+                </motion.div>
               </motion.div>
             </div>
           </div>

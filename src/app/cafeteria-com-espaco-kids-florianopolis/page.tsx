@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import Testimonials from "@/components/Testimonials";
 import AnimatedSection from "@/components/AnimatedSection";
+import TrackingLink from "@/components/TrackingLink";
 import { motion } from "framer-motion";
 import { Baby, Dog, Trees, Coffee, Users, Sun, Sparkles, Smile } from "lucide-react";
 import Image from "next/image";
@@ -237,20 +238,25 @@ export default function CafeteriaComEspacoKids() {
               cafe da manha em familia, brunch de fim de semana, encontros tranquilos durante a
               tarde e momentos especiais ao por do sol.
             </motion.p>
-            <motion.a
-              href="https://wa.me/5548985008964"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors shadow-lg"
             >
-              Venha com Toda a Familia
-            </motion.a>
+              <TrackingLink
+                href="https://wa.me/5548985008964"
+                trackingType="whatsapp"
+                ctaName="whatsapp_kids_venha_familia"
+                clickLocation="Kids Page - CTA Section"
+                target="_blank"
+                className="inline-block bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors shadow-lg"
+              >
+                Venha com Toda a Familia
+              </TrackingLink>
+            </motion.div>
           </div>
         </section>
 

@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
+import TrackingLink from "@/components/TrackingLink";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -216,20 +217,26 @@ export default function SobreOTaipei() {
               Venha conhecer o Taipei Coffee House em Cacupé e viva uma experiência
               gastronômica que une cultura, sabor e paisagem em Florianópolis.
             </motion.p>
-            <motion.a
-              href="https://wa.me/5548985008964"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block mt-10 bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors shadow-lg"
+              className="inline-block mt-10"
             >
-              Reservar Mesa no Taipei Coffee House
-            </motion.a>
+              <TrackingLink
+                href="https://wa.me/5548985008964"
+                trackingType="reserva"
+                ctaName="whatsapp_sobre_reservar_mesa"
+                clickLocation="Sobre Page - Final CTA"
+                target="_blank"
+                className="inline-block bg-white text-taipei-red px-10 py-4 rounded-full font-semibold hover:bg-taipei-cream transition-colors shadow-lg"
+              >
+                Reservar Mesa no Taipei Coffee House
+              </TrackingLink>
+            </motion.div>
           </div>
         </section>
 

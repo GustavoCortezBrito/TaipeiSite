@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import ContactSection from "@/components/ContactSection";
+import EventosContactSection from "@/components/EventosContactSection";
 import { motion } from "framer-motion";
 import { Briefcase, Users, Coffee, Presentation, Wifi, Clock } from "lucide-react";
 import Image from "next/image";
@@ -209,7 +209,13 @@ export default function EventosCorporativos() {
           </div>
         </AnimatedSection>
 
-        <ContactSection />
+        <EventosContactSection 
+          title="Solicite um Orçamento"
+          subtitle="Entre em contato para receber uma proposta personalizada para o seu evento corporativo"
+          formTitle="Solicite um Orçamento"
+          formType="eventos"
+          pageName="Eventos Corporativos"
+        />
       </main>
       <Footer />
     </>

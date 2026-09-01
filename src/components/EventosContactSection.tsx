@@ -6,15 +6,23 @@ import { Send, CheckCircle, MapPin, Phone, Mail, Clock, Navigation } from "lucid
 import TrackingLink from "@/components/TrackingLink";
 import { useFormTracking } from "@/hooks/useFormTracking";
 
-function ContactForm() {
+interface EventosContactSectionProps {
+  title?: string;
+  subtitle?: string;
+  formTitle?: string;
+  formType?: 'eventos' | 'reserva';
+  pageName?: string;
+}
+
+function EventosContactForm({ formType = 'eventos', formTitle = "Solicite um Orçamento", pageName = "Eventos" }: { formType?: 'eventos' | 'reserva', formTitle?: string, pageName?: string }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Hook de tracking para o formulário
+  // Hook de tracking para o formulário de eventos
   const { onFormStart, onFormSubmit } = useFormTracking({
-    formType: 'reserva',
-    formName: 'Formulário de Contato/Reserva',
+    formType: formType,
+    formName: `Formulário de ${formType === 'eventos' ? 'Eventos' : 'Reserva'} - ${pageName}`,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,10 +43,10 @@ function ContactForm() {
         body: JSON.stringify(form),
       });
     } catch (error) {
-      console.error("Erro ao enviar e-mail de contato:", error);
+      console.error("Erro ao enviar e-mail de eventos:", error);
     }
 
-    const msg = `Olá! Me chamo *${form.name}*.\n📧 E-mail: ${form.email}${form.phone ? `\n📱 Telefone: ${form.phone}` : ""}\n\n${form.message}`;
+    const msg = `Olá! Me chamo *${form.name}*.\n📧 E-mail: ${form.email}${form.phone ? `\n📱 Telefone: ${form.phone}` : ""}\n\n*Solicitação de Orçamento - ${pageName}*\n\n${form.message}`;
     const url = `https://wa.me/5548985008964?text=${encodeURIComponent(msg)}`;
     
     setLoading(false);
@@ -58,7 +66,7 @@ function ContactForm() {
         className="flex flex-col items-center justify-center py-16 gap-4 text-center"
       >
         <CheckCircle className="text-taipei-red" size={56} />
-        <p className="text-2xl font-serif text-taipei-red">Mensagem enviada!</p>
+        <p className="text-2xl font-serif text-taipei-red">Solicitação enviada!</p>
         <p className="text-taipei-brown">Você será redirecionado para o WhatsApp em instantes.</p>
       </motion.div>
     );
@@ -67,11 +75,11 @@ function ContactForm() {
   return (
     <form onSubmit={handleSubmit} onFocus={onFormStart} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div className="flex flex-col gap-1">
-        <label htmlFor="cs-name" className="text-sm font-medium text-taipei-brown">
+        <label htmlFor="evt-name" className="text-sm font-medium text-taipei-brown">
           Nome <span className="text-taipei-red">*</span>
         </label>
         <input
-          id="cs-name"
+          id="evt-name"
           name="name"
           type="text"
           required
@@ -83,11 +91,11 @@ function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="cs-email" className="text-sm font-medium text-taipei-brown">
+        <label htmlFor="evt-email" className="text-sm font-medium text-taipei-brown">
           E-mail <span className="text-taipei-red">*</span>
         </label>
         <input
-          id="cs-email"
+          id="evt-email"
           name="email"
           type="email"
           required
@@ -99,11 +107,11 @@ function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1 sm:col-span-2">
-        <label htmlFor="cs-phone" className="text-sm font-medium text-taipei-brown">
+        <label htmlFor="evt-phone" className="text-sm font-medium text-taipei-brown">
           Telefone / WhatsApp
         </label>
         <input
-          id="cs-phone"
+          id="evt-phone"
           name="phone"
           type="tel"
           value={form.phone}
@@ -114,17 +122,17 @@ function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1 sm:col-span-2">
-        <label htmlFor="cs-message" className="text-sm font-medium text-taipei-brown">
+        <label htmlFor="evt-message" className="text-sm font-medium text-taipei-brown">
           Mensagem <span className="text-taipei-red">*</span>
         </label>
         <textarea
-          id="cs-message"
+          id="evt-message"
           name="message"
           required
           rows={4}
           value={form.message}
           onChange={handleChange}
-          placeholder="Escreva sua dúvida, reserva ou mensagem..."
+          placeholder="Conte-nos sobre seu evento: data, número de pessoas, tipo de celebração..."
           className="border border-taipei-beige rounded-xl px-4 py-3 text-taipei-brown placeholder-taipei-beige/70 focus:outline-none focus:border-taipei-red transition-colors bg-white resize-none"
         />
       </div>
@@ -138,7 +146,7 @@ function ContactForm() {
           className="w-full inline-flex items-center justify-center gap-2 bg-taipei-red text-white px-8 py-4 rounded-xl hover:bg-taipei-brown transition-all hover:shadow-lg font-semibold disabled:opacity-60"
         >
           <Send size={18} />
-          {loading ? "Enviando..." : "Enviar Mensagem"}
+          {loading ? "Enviando..." : "Solicitar Orçamento"}
         </motion.button>
       </div>
     </form>
@@ -168,8 +176,8 @@ function LocationCard() {
           <TrackingLink
             href="tel:+5548985008964"
             trackingType="ligar"
-            ctaName="telefone_contact_section"
-            clickLocation="Contact Section"
+            ctaName="telefone_eventos_section"
+            clickLocation="Eventos Section"
             className="flex flex-col items-center gap-1 bg-taipei-cream hover:bg-taipei-beige/40 rounded-lg p-3 transition-colors"
           >
             <Phone size={14} className="text-taipei-red" />
@@ -189,7 +197,7 @@ function LocationCard() {
         </div>
       </div>
 
-      {/* Map embed — flex-1 para ocupar o espaço restante */}
+      {/* Map embed */}
       <div className="flex-1 min-h-48">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.2!2d-48.5197!3d-27.5069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952737f4b4b4b4b5%3A0x0!2sEstrada+Haroldo+Soares+Glavan%2C+3010+-+Cacu%C3%A9%2C+Florian%C3%B3polis+-+SC!5e0!3m2!1spt-BR!2sbr!4v1"
@@ -208,8 +216,8 @@ function LocationCard() {
         <TrackingLink
           href={mapsUrl}
           trackingType="como_chegar"
-          ctaName="maps_contact_section"
-          clickLocation="Contact Section"
+          ctaName="maps_eventos_section"
+          clickLocation="Eventos Section"
           target="_blank"
           className="flex items-center justify-center gap-2 bg-taipei-red hover:bg-taipei-brown text-white font-semibold py-3 rounded-xl transition-colors"
         >
@@ -219,8 +227,8 @@ function LocationCard() {
         <TrackingLink
           href={directionsUrl}
           trackingType="como_chegar"
-          ctaName="directions_contact_section"
-          clickLocation="Contact Section"
+          ctaName="directions_eventos_section"
+          clickLocation="Eventos Section"
           target="_blank"
           className="flex items-center justify-center gap-2 bg-taipei-cream hover:bg-taipei-beige/50 text-taipei-brown font-semibold py-3 rounded-xl transition-colors border border-taipei-beige"
         >
@@ -232,9 +240,15 @@ function LocationCard() {
   );
 }
 
-export default function ContactSection() {
+export default function EventosContactSection({ 
+  title = "Fale Conosco",
+  subtitle = "Solicite um orçamento personalizado para o seu evento",
+  formTitle = "Solicite um Orçamento",
+  formType = 'eventos',
+  pageName = "Eventos"
+}: EventosContactSectionProps) {
   return (
-    <section id="contato-form" className="py-24 px-4 bg-taipei-cream">
+    <section id="contato-eventos" className="py-24 px-4 bg-taipei-cream">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
@@ -245,11 +259,11 @@ export default function ContactSection() {
           className="text-center mb-14"
         >
           <h2 className="text-4xl md:text-5xl font-serif text-taipei-red mb-4">
-            Fale Conosco
+            {title}
           </h2>
           <div className="w-24 h-1 bg-taipei-red mx-auto mb-4" />
           <p className="text-taipei-brown text-lg">
-            Reservas, eventos ou dúvidas — estamos aqui para ajudar.
+            {subtitle}
           </p>
         </motion.div>
 
@@ -262,9 +276,9 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl p-8 border border-taipei-beige/40 shadow-sm flex flex-col"
           >
-            <p className="text-2xl font-serif text-taipei-red mb-6 font-semibold">Envie uma mensagem</p>
+            <p className="text-2xl font-serif text-taipei-red mb-6 font-semibold">{formTitle}</p>
             <div className="flex-1">
-              <ContactForm />
+              <EventosContactForm formType={formType} formTitle={formTitle} pageName={pageName} />
             </div>
           </motion.div>
 

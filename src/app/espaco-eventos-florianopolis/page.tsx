@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import ContactSection from "@/components/ContactSection";
+import EventosContactSection from "@/components/EventosContactSection";
 import { motion } from "framer-motion";
 import { Calendar, Users, Sparkles, Heart, Briefcase, PartyPopper, Camera, Music, UtensilsCrossed } from "lucide-react";
 import Link from "next/link";
@@ -279,7 +279,13 @@ export default function EspacoEventos() {
           </div>
         </AnimatedSection>
 
-        <ContactSection />
+        <EventosContactSection 
+          title="Solicite um Orçamento"
+          subtitle="Entre em contato para receber uma proposta personalizada para o seu evento"
+          formTitle="Solicite um Orçamento"
+          formType="eventos"
+          pageName="Espaço de Eventos"
+        />
       </main>
       <Footer />
     </>

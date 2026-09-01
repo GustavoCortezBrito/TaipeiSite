@@ -16,7 +16,7 @@ export async function GET() {
     const instagramUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${token}`;
     
     const response = await fetch(instagramUrl, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 86400 }, // Cache de 24 horas (atualiza 1x ao dia)
     });
 
     if (!response.ok) {

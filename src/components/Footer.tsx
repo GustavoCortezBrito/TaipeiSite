@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
+import TrackingLink from "@/components/TrackingLink";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,17 +30,19 @@ export default function Footer() {
               Café cosmopolita em Cacupé, Florianópolis, com vista para o mar.
             </p>
             <div className="flex gap-3">
-              <motion.a
-                href="https://www.instagram.com/taipeicoffeehouse/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Siga o Taipei Coffee House no Instagram"
-                className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Instagram size={20} />
-              </motion.a>
+              <motion.div whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+                <TrackingLink
+                  href="https://www.instagram.com/taipeicoffeehouse/"
+                  trackingType="instagram"
+                  ctaName="instagram_footer"
+                  clickLocation="Footer"
+                  target="_blank"
+                  aria-label="Siga o Taipei Coffee House no Instagram"
+                  className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors block"
+                >
+                  <Instagram size={20} />
+                </TrackingLink>
+              </motion.div>
               <motion.a
                 href="https://www.facebook.com/taipeicoffeehouse"
                 target="_blank"
@@ -126,25 +129,29 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-taipei-beige">
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="flex-shrink-0 mt-0.5 text-white" />
-                <a
+                <TrackingLink
                   href="https://maps.google.com/?q=Taipei+Coffee+House+Cacupe+Florianopolis"
+                  trackingType="como_chegar"
+                  ctaName="maps_footer"
+                  clickLocation="Footer"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   Estrada Haroldo Soares Glavan, 3010 - Cacupé, Florianópolis - SC, 88050-005
-                </a>
+                </TrackingLink>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={18} className="flex-shrink-0 text-white" />
-                <a
+                <TrackingLink
                   href="https://wa.me/5548985008964"
+                  trackingType="whatsapp"
+                  ctaName="whatsapp_footer"
+                  clickLocation="Footer"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   (48) 98500-8964
-                </a>
+                </TrackingLink>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={18} className="flex-shrink-0 text-white" />

@@ -2,12 +2,13 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppButtonTracked from "@/components/WhatsAppButtonTracked";
 import AnimatedSection from "@/components/AnimatedSection";
 import FAQ from "@/components/FAQ";
 import InstagramFeed from "@/components/InstagramFeed";
 import ContactSection from "@/components/ContactSection";
 import Testimonials from "@/components/Testimonials";
+import TrackingLink from "@/components/TrackingLink";
 import { motion } from "framer-motion";
 import { Coffee, UtensilsCrossed, Calendar, Sparkles, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <WhatsAppButton />
+      <WhatsAppButtonTracked />
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -548,16 +549,18 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
+                <TrackingLink
                   href="https://wa.me/5548985008964"
+                  trackingType="whatsapp"
+                  ctaName="whatsapp_home_hero"
+                  clickLocation="Home Hero"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="group bg-white text-taipei-red px-10 py-4 rounded-full hover:bg-taipei-cream transition-all hover:shadow-2xl inline-flex items-center gap-2 font-semibold relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-taipei-red/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   <Phone size={20} />
                   Fazer Reserva via WhatsApp
-                </a>
+                </TrackingLink>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link

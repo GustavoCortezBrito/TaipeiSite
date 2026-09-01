@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppButtonTracked from "@/components/WhatsAppButtonTracked";
 import ContactSection from "@/components/ContactSection";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
@@ -411,7 +411,7 @@ export default function Menu() {
   return (
     <>
       <Header />
-      <WhatsAppButton />
+      <WhatsAppButtonTracked />
       <main className="min-h-screen">
         {/* Hero */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">

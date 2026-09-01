@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import ContactSection from "@/components/ContactSection";
+import EventosContactSection from "@/components/EventosContactSection";
 import { motion } from "framer-motion";
 import { Heart, Cake, PartyPopper, Sparkles, Camera, Music } from "lucide-react";
 import Testimonials from "@/components/Testimonials";
@@ -182,7 +182,13 @@ export default function EventosSociais() {
           </div>
         </AnimatedSection>
 
-        <ContactSection />
+        <EventosContactSection 
+          title="Solicite um Orçamento"
+          subtitle="Entre em contato e vamos criar uma celebração inesquecível"
+          formTitle="Solicite um Orçamento"
+          formType="eventos"
+          pageName="Eventos Sociais"
+        />
       </main>
       <Footer />
     </>

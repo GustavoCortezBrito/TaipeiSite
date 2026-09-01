@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Calendar, Users, Heart } from "lucide-react";
+import TrackingLink from "@/components/TrackingLink";
 
 const eventosDropdown = [
   {
@@ -139,12 +140,15 @@ export default function Header() {
 
             {/* Botao Reservar */}
             <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
+              <TrackingLink
                 href="/#contato-form"
+                trackingType="reserva"
+                ctaName="reserva_header"
+                clickLocation="Header"
                 className="bg-taipei-red text-white px-6 py-2 rounded-full transition-shadow hover:shadow-lg font-medium"
               >
                 Reservar
-              </Link>
+              </TrackingLink>
             </motion.li>
           </ul>
 
@@ -229,13 +233,16 @@ export default function Header() {
                 </motion.li>
 
                 <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: (menuItems.length + 1) * 0.1 }}>
-                  <Link
+                  <TrackingLink
                     href="/#contato-form"
+                    trackingType="reserva"
+                    ctaName="reserva_header_mobile"
+                    clickLocation="Header Mobile"
                     onClick={() => setIsOpen(false)}
                     className="block bg-taipei-red text-white px-6 py-2 rounded-full text-center hover:bg-taipei-brown transition-colors"
                   >
                     Reservar
-                  </Link>
+                  </TrackingLink>
                 </motion.li>
               </ul>
             </motion.div>
